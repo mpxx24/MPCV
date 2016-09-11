@@ -3,14 +3,18 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 using MPCV.DatabaseAccess;
+using MPCV.Models.ApiModels;
+using static MPCV.Models.Converters.UserModelConverter;
 
 namespace MPCV.Controllers {
     public class UsersController : ApiController {
-        // GET api/values
-        public IEnumerable<User> Get() {
+        // GET api/users
+        public IEnumerable<UserApiModel> Get() {
             using (var ctx = new UserContext()) {
                 ctx.Configuration.ProxyCreationEnabled = false;
-                return ctx.Users.Include(c => c.ProgrammingSkills).ToList();
+                var users = ConvertUserToApiModel(ctx.Users.Include(x => x.ProgrammingSkills).First());
+
+                return users;
             }
         }
     }
