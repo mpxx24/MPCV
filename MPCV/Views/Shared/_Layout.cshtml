@@ -12,36 +12,32 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 navbar-inverse sidebar">
                 <div id="main-layout-circle-image" class="circular-image"></div>
-
                 <ul id="side-panel-ul">
                     <li>
-                        @Html.ActionLink("Personal info", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Personal info", "PersonalInfo", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li>
-                        @Html.ActionLink("Programming skills", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Programming skills", "ProgrammingSkills", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li>
-                        @Html.ActionLink("Project examples", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Project examples", "ProjectExamples", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li>
-                        @Html.ActionLink("Github repository", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Github repository", "GithubRepository", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li>
-                        @Html.ActionLink("Download CV", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Download CV", "DownloadCv", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li>
-                        @Html.ActionLink("Contact me", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Contact me", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
-
                 </ul>
-
             </div>
-            <div class="col-md-7 col-sm-offset-1 body-content">
+            <div class="col-md-6 col-md-offset-2 body-content">
                 @RenderBody()
             </div>
         </div>
@@ -49,7 +45,6 @@
             <p>&copy; @DateTime.Now.Year - Mariusz Piątkowski</p>
         </footer>
     </div>
-
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>

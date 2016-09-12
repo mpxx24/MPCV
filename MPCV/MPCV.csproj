@@ -200,6 +200,8 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\Coves Bold.otf" />
+    <Content Include="fonts\Coves Light.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -225,6 +227,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\PersonalInfo.cshtml" />
+    <Content Include="Views\Home\ProgrammingSkills.cshtml" />
+    <Content Include="Views\Home\ProjectExamples.cshtml" />
+    <Content Include="Views\Home\GithubRepository.cshtml" />
+    <Content Include="Views\Home\DownloadCV.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
