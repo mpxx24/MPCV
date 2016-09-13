@@ -1,8 +1,15 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "ProgrammingSkills";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+<script type="text/javascript" src="../../Scripts/uvcharts.js"></script>
+<script type="text/javascript" src="../../Scripts/Graphs.js"></script>
 
 <h2>ProgrammingSkills</h2>
 
+<div id="uv-div"></div>
+
+<script type="text/javascript">
+    GraphHelper.programmingSkills();
+</script>
