@@ -10,13 +10,25 @@
         -webkit-box-shadow: 5px 5px 5px #888888;
         -ms-box-shadow: 5px 5px 5px #888888;
         box-shadow: 5px 5px 5px #888888;
+        position: fixed;
     }
 
     #side-panel-ul {
         padding-top: 50px;
         list-style-type: none;
-        float: left;
     }  
+
+    #side-panel-ul > li {
+        margin-left: 10px;
+        width: 250px;
+        height: 65px;
+    }
+    
+    #side-panel-ul > li >  a {
+        height: 65px;
+        text-align: center;
+        font-size: 18px;
+    }
 
     .circular-image {
         width: 180px;
