@@ -1,2 +1,10 @@
 ﻿body {
 }
+
+.signature {
+    font-size: 16px;
+    font-family: Coves;
+    color: honeydew;
+    text-align: center;
+    margin-top: 75px;
+}

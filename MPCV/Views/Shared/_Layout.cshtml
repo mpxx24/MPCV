@@ -15,7 +15,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 navbar-inverse sidebar">
+            <div class="col-md-2 sidebar">
                 <div id="main-layout-circle-image" class="circular-image"></div>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
@@ -28,44 +28,25 @@
                 </div>
                 <div class="navbar-collapse collapse sidebar-navbar-collapse">
                     <ul id="side-panel-ul" class="nav navbar-nav">
-                        <li><a href="#">Menu Item 1</a></li>
-                        <li><a href="#">Menu Item 2</a></li>
-                        <li><a href="#">Menu Item 3</a></li>
-                        <li><a href="#">Menu Item 4</a></li>
+                        <li>@Html.ActionLink("Personal info", "PersonalInfo", "Home", new {area = ""}, new {})</li>
+                        <li>@Html.ActionLink("Programming skills", "ProgrammingSkills", "Home", new {area = ""}, new {})</li>
+                        <li>@Html.ActionLink("Project examples", "ProjectExamples", "Home", new {area = ""}, new {})</li>
+                        <li>@Html.ActionLink("Github repository", "GithubRepository", "Home", new {area = ""}, new {})</li>
+                        <li>@Html.ActionLink("Contact me", "Contact", "Home", new {area = ""}, new {})</li>
                     </ul>
                 </div>
-
-
-                @*<ul id="side-panel-ul">
-                    <li>
-                        @Html.ActionLink("Personal info", "PersonalInfo", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                    <li>
-                        @Html.ActionLink("Programming skills", "ProgrammingSkills", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                    <li>
-                        @Html.ActionLink("Project examples", "ProjectExamples", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                    <li>
-                        @Html.ActionLink("Github repository", "GithubRepository", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                    <li>
-                        @Html.ActionLink("Download CV", "DownloadCv", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                    <li>
-                        @Html.ActionLink("Contact me", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                </ul>*@
+                <div class="signature">
+                    <p>&copy; @DateTime.Now.Year - Mariusz Piątkowski</p>
+                </div>
             </div>
             <div class="col-md-6 col-md-offset-2 body-content">
                 @RenderBody()
             </div>
         </div>
-        <footer class="col-md-offset-2 footer">
-            <p>&copy; @DateTime.Now.Year - Mariusz Piątkowski</p>
-        </footer>
     </div>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery/animations.js"></script>
 </body>
 </html>
