@@ -1,39 +1,46 @@
-﻿var GraphHelper = function () {
+﻿var GraphHelper = function() {
 };
 
-GraphHelper.programmingSkills = function () {
+GraphHelper.programmingSkills = function() {
     var graphdef = {
         categories: ["Programming skills"],
         dataset: {
             "Programming skills": [
                 { name: "C#", value: 75 },
                 { name: "Javascript", value: 55 },
-                { name: "HTML", value: 50 },
+                { name: "jQuery", value: 50 },
+                { name: "HTML", value: 65 },
                 { name: "CSS", value: 45 }
             ]
         }
     };
     var chart = uv.chart("Bar", graphdef, {
             graph: {
-                orientation: "Vertical"
+                orientation: "Horizontal"
             },
             effects: {
                 hovercolor: "#2B4970",
                 strokecolor: "none",
                 textcolor: "#000000",
-                duration: 600,
+                duration: 500,
                 hover: 200,
-                showhovertext: false
+                showhovertext: true
             },
             dimension: {
-                width: 700,
-                height: 300
+                width: 400,
+                height: 100
             },
             axis: {
-                opacity: 0
+                opacity: 0,
+                showtext: true,
+                strokecolor: "none",
+                ticks: 0
             },
             tooltip: {
-                show: false
+                show: true
+            },
+            legend: {
+                showlegends: false
             }
         }
     );
