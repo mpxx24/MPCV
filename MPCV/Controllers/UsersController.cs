@@ -1,21 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Web.Http;
-using MPCV.DatabaseAccess;
 using MPCV.Models.ApiModels;
-using static MPCV.Models.Converters.UserModelConverter;
+using MPCV.Services.Interfaces;
 
 namespace MPCV.Controllers {
     public class UsersController : ApiController {
+        private readonly IUserWebApiService userWebApiService;
+
+        public UsersController(IUserWebApiService userWebApiService) {
+            this.userWebApiService = userWebApiService;
+        }
+
         // GET api/users
         public IEnumerable<UserApiModel> Get() {
-            using (var ctx = new UserContext()) {
-                ctx.Configuration.ProxyCreationEnabled = false;
-                var users = ConvertUserToApiModel(ctx.Users.Include(x => x.ProgrammingSkills).First());
-
-                return users;
-            }
+            return userWebApiService.GetWebApiUserResults();
         }
     }
 }
