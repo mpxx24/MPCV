@@ -9,8 +9,6 @@
     <link href="~/Content/Controls.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/HomeStyles/Home.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    <script src="~/Scripts/MPCV.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -28,11 +26,11 @@
                 </div>
                 <div class="navbar-collapse collapse sidebar-navbar-collapse">
                     <ul id="side-panel-ul" class="nav navbar-nav">
-                        <li>@Html.ActionLink("Personal info", "PersonalInfo", "Home", new {area = ""}, new {})</li>
-                        <li>@Html.ActionLink("Programming skills", "ProgrammingSkills", "Home", new {area = ""}, new {})</li>
-                        <li>@Html.ActionLink("Project examples", "ProjectExamples", "Home", new {area = ""}, new {})</li>
-                        <li>@Html.ActionLink("Github repository", "GithubRepository", "Home", new {area = ""}, new {})</li>
-                        <li>@Html.ActionLink("Contact me", "Contact", "Home", new {area = ""}, new {})</li>
+                        <li>@Html.ActionLink("Personal info", "PersonalInfo", "Home", new { area = "" }, new { })</li>
+                        <li>@Html.ActionLink("Programming skills", "ProgrammingSkills", "Home", new { area = "" }, new { })</li>
+                        <li>@Html.ActionLink("Project examples", "ProjectExamples", "Home", new { area = "" }, new { })</li>
+                        <li>@Html.ActionLink("Github repository", "GithubRepository", "Home", new { area = "" }, new { })</li>
+                        <li>@Html.ActionLink("Contact me", "Contact", "Home", new { area = "" }, new { })</li>
                     </ul>
                 </div>
                 <div class="signature">
@@ -44,9 +42,11 @@
             </div>
         </div>
     </div>
-    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery/animations.js"></script>
+    <script src="~/Scripts/bootstrap/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/my scripts/MPCV.js"></script>
+    <script src="~/Scripts/jquery/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Scripts/my scripts/Animations.js"></script>
 </body>
 </html>

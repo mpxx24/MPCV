@@ -1,0 +1,12 @@
+﻿/// <autosync enabled="true" />
+/// <reference path="../bootstrap/bootstrap.min.js" />
+/// <reference path="../bootstrap/modernizr-2.6.2.js" />
+/// <reference path="../bootstrap/respond.js" />
+/// <reference path="../charts/uvcharts.js" />
+/// <reference path="jquery.validate.min.js" />
+/// <reference path="jquery.validate.unobtrusive.min.js" />
+/// <reference path="jquery-1.12.4.min.js" />
+/// <reference path="jquery-ui-1.12.1.min.js" />
+/// <reference path="../my scripts/animations.js" />
+/// <reference path="../my scripts/graphs.js" />
+/// <reference path="../my scripts/mpcv.js" />
