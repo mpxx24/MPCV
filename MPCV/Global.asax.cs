@@ -1,13 +1,12 @@
 ﻿using System.Web;
 using System.Web.Http;
-using System.Web.Http.Dispatcher;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using MPCV.Services.Installers;
-using MPCV.Windsor;
 
 namespace MPCV {
     public class WebApiApplication : HttpApplication {
@@ -33,9 +32,10 @@ namespace MPCV {
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //windsor magic
-            container = new WindsorContainer().Install(new ServicesInstaller());
+            container = new WindsorContainer();
             container.Install(FromAssembly.This());
-            GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), new WindsorCompositionRoot(container));
+            container.Install(new WindsorInstaller());
+            container.Kernel.Resolver.AddSubResolver(new CollectionResolver(container.Kernel, true));
         }
     }
 }

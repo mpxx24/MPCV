@@ -7,6 +7,9 @@ namespace MPCV.Controllers {
     public class UsersController : ApiController {
         private readonly IUserWebApiService userWebApiService;
 
+        public UsersController() {
+        }
+
         public UsersController(IUserWebApiService userWebApiService) {
             this.userWebApiService = userWebApiService;
         }
