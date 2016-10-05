@@ -196,8 +196,9 @@
     <Compile Include="Services\Installers\WindsorInstaller.cs" />
     <Compile Include="Services\Interfaces\IUserWebApiService.cs" />
     <Compile Include="Services\UserWebApiService.cs" />
+    <Compile Include="Services\Windsor\WindsorDependencyResolver.cs" />
+    <Compile Include="Services\Windsor\WindsorDependencyScope.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Windsor\WindsorCompositionRoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.css" />

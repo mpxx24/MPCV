@@ -6,18 +6,11 @@ using System.Web.Routing;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
-using MPCV.Services.Installers;
+using MPCV.Services.Windsor;
 
 namespace MPCV {
     public class WebApiApplication : HttpApplication {
-        private IWindsorContainer container;
-
-        public WebApiApplication() {
-        }
-
-        public WebApiApplication(IWindsorContainer container) {
-            this.container = container;
-        }
+        private static IWindsorContainer container;
 
         public override void Dispose() {
             container.Dispose();
@@ -31,11 +24,16 @@ namespace MPCV {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            ConfigureWindsor(GlobalConfiguration.Configuration);
+        }
+
+        private static void ConfigureWindsor(HttpConfiguration configuration) {
             //windsor magic
             container = new WindsorContainer();
             container.Install(FromAssembly.This());
-            container.Install(new WindsorInstaller());
             container.Kernel.Resolver.AddSubResolver(new CollectionResolver(container.Kernel, true));
+            var dependencyResolver = new WindsorDependencyResolver(container);
+            configuration.DependencyResolver = dependencyResolver;
         }
     }
 }
