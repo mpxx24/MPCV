@@ -300,6 +300,7 @@
     <Content Include="Views\Home\GithubRepository.cshtml" />
     <Content Include="Views\Home\DownloadCV.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <None Include="Views\Home\Blog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

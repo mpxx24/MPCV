@@ -1,0 +1,17 @@
+﻿@model List<MPCV.DatabaseAccess.Post>
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Blog</h2>
+
+@foreach (var post in Model) {
+    <div class="blogPost">
+        <h2>@post.Title</h2>
+
+        @nameof(post.Category)
+
+        @post.Content
+    </div>
+}

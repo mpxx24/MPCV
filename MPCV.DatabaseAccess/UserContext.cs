@@ -7,5 +7,7 @@ namespace MPCV.DatabaseAccess {
     public class UserContext : DbContext {
         public DbSet<User> Users { get; set; }
         public DbSet<ProgrammingSkill> ProgrammingSkills { get; set; }
+        public DbSet<Post> Posts { get; set; } 
+
     }
 }

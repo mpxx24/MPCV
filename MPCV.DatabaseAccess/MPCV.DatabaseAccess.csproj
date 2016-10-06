@@ -49,8 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProgrammingSkill.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Blog\Post.cs" />
+    <Compile Include="Blog\PostCategory.cs" />
+    <Compile Include="User\ProgrammingSkill.cs" />
+    <Compile Include="User\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserContext.cs" />
   </ItemGroup>
