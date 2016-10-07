@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MPCV.DatabaseAccess {
+namespace MPCV.DatabaseAccess.Blog {
     public class Post {
         [Key]
         public int Id { get; set; }
@@ -12,6 +12,6 @@ namespace MPCV.DatabaseAccess {
         public string Author { get; set; }
         public DateTime Added { get; set; }
         public PostCategory Category { get; set; }
-        public IEnumerable<string> Comments { get; set; } 
+        public List<string> Comments { get; set; } 
     }
 }

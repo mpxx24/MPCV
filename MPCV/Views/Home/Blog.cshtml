@@ -1,4 +1,4 @@
-﻿@model List<MPCV.DatabaseAccess.Post>
+﻿@model List<MPCV.DatabaseAccess.Blog.Post>
 @{
     ViewBag.Title = "Blog";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,10 +8,32 @@
 
 @foreach (var post in Model) {
     <div class="blogPost">
-        <h2>@post.Title</h2>
-
-        @nameof(post.Category)
-
-        @post.Content
+        <div class="panel panel-default clearfix">
+            <div class="panel-heading panel-heading-blog">
+                <h4>
+                    @Html.ActionLink(post.Title, "Post", "Blog",
+                        new {
+                            title = post.Title,
+                            author = post.Author,
+                            added = post.Added,
+                            category = post.Category,
+                            content = post.Content,
+                            comments = post.Comments.ToList()
+                        },
+                        null)
+                </h4>
+                <br/>
+                <span class="postCategory">
+                    Category: @post.Category
+                </span>
+            </div>
+            <div class="panel-body panel-height">
+                @post.ShortDescription
+                <br/>
+            </div>
+            <div class="commentsBlog">
+                @post.Comments.Count() <span class="glyphicon glyphicon-comment"></span>
+            </div>
+        </div>
     </div>
 }
