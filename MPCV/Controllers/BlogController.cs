@@ -3,8 +3,8 @@ using MPCV.DatabaseAccess.Blog;
 
 namespace MPCV.Controllers {
     public class BlogController : Controller {
-        public ActionResult Post(Post post) {
-            return View(post);
+        public ActionResult BlogPost(Post post) {
+            return View(post);  
         }
     }
 }

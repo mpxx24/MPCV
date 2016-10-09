@@ -1,7 +1,4 @@
-﻿body {
-}
-
-.signature {
+﻿.signature {
     font-size: 16px;
     font-family: Coves;
     color: honeydew;
@@ -9,30 +6,18 @@
     margin-top: 125px;
 }
 
-.blogPost {
-    float: left;
-    position: relative;
-    width: 49%;
-    margin-left: 1%;
+.code {
+    background-color: #e5e5e5;
+    font-size: 12px;
+    white-space: pre-wrap;
 }
 
-.panel-default > .panel-heading-blog {
-    background-color: #202020 !important;
-    color: honeydew !important;
+/* display keywords properly in <code> tag */
+.type, .class, .method, .enum, .static, .return, .new, .loop, .ienumerable, .iqueryable, .null{
+    color: #0000cd;
 }
 
-.panel-height {
-    max-height: 50px;
+.comment {
+    color: green;
 }
 
-.commentsBlog {
-    float: right;
-    font-size: 16px;
-}
-.commentsBlog > span {
-    margin-right: 5px;
-}
-
-.authorPost {
-    float: right;
-}

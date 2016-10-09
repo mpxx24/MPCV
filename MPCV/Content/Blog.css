@@ -1,0 +1,27 @@
+﻿.blogPost {
+    /*float: left;
+    position: relative;
+    width: 49%;
+    margin-left: 1%;*/
+}
+
+.panel-default > .panel-heading-blog {
+    background-color: #202020 !important;
+    color: honeydew !important;
+}
+
+.panel-height {
+    max-height: 50px;
+}
+
+.commentsBlog {
+    float: right;
+    font-size: 16px;
+}
+.commentsBlog > span {
+    margin-right: 5px;
+}
+
+.authorPost {
+    float: right;
+}

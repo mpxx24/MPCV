@@ -1,0 +1,41 @@
+﻿@using System.Data.Entity
+@using MPCV.DatabaseAccess
+@using MPCV.Models.ApiModels
+@using MPCV.Models.Converters
+@model MPCV.DatabaseAccess.Blog.Post
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wholePost">
+    <div class="panel panel-default clearfix">
+        <div class="panel-heading panel-heading-blog">
+            <h4>@Model.Title</h4>
+            <br />
+            <span class="postCategory">
+                Category: @Model.Category
+            </span>
+            <span class="authorPost">
+                by: @Model.Author, added @Model.Added.Date
+            </span>
+        </div>
+    </div>
+    <div class="panel-body panel-height panel-post">
+        @Html.Raw(Model.Content.Replace(Environment.NewLine, "<br/>"));
+        <br />
+        <div class="code">
+            @Html.Raw("<div class=\"code\">" +
+                      "<span class=\"class\">public class</span> UserWebApiService : IUserWebApiService { " +
+                      "<span class=\"method\">public IEnumerable</span><UserApiModel> GetWebApiUserResults() {" +
+                      "using (var ctx = new UserContext()) {" +
+                      "ctx.Configuration.ProxyCreationEnabled = false;" +
+                      "<span class\"type\">var</span> users = UserModelConverter.ConvertUserToApiModel(ctx.Users.Include(x => x.ProgrammingSkills).First());" +
+                      "return users;" +
+                      "}" +
+                      "}" +
+                      "}" +
+                      "</div>")
+        </div>
+    </div>
+    <div class="commentsPost"></div>
+</div>
