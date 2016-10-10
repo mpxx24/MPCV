@@ -1,11 +1,6 @@
 ﻿@font-face {
-    font-family: Coves;
-    src: url("'../fonts/Coves/Coves Bold.otf'");
-}
-
-@font-face {
-    font-family: Moon;
-    src: url("'../fonts/Moon/Moon Bold.otf'");
+    font-family: YuGothic;
+    src: url("'../../../fonts/YuGothic/yugothib.ttf");
 }
 
 body { min-height: 100%; }
@@ -25,7 +20,7 @@ textarea { max-width: 280px; }
 
 html, body, .container-fluid, .row {
     background-color: white;
-    font-family: Coves;
+    font-family: YuGothic;
     height: 100%;
     overflow: hidden;
 }

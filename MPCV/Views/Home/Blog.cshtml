@@ -23,7 +23,7 @@
                 <br/>
             </div>
             <div class="commentsBlog">
-                @post.Comments.Count() <span class="glyphicon glyphicon-comment"></span>
+                @(post.Comments?.Count ?? 0) <span class="glyphicon glyphicon-comment"></span>
             </div>
         </div>
     </div>

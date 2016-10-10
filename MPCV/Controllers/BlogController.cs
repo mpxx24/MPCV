@@ -11,9 +11,9 @@ namespace MPCV.Controllers {
             this.blogService = blogService;
         }
 
-        public ActionResult BlogPost(int postId) {
-            var post = this.blogService.GetPost(postId);
-            return View(post);  
+        public ActionResult BlogPost(int id) {
+            var post = this.blogService.GetPost(id);
+            return View(post);      
         }
     }
 }

@@ -29,8 +29,8 @@
         border-bottom: 1px solid #333333;
         color: #00ACED;
         display: flex;
-        font-family: 'Yu Gothic UI';
-        font-size: 18px;
+        font-family: YuGothic;
+        font-size: 16px;
         height: 65px;
         justify-content: center;
     }

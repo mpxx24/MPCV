@@ -10,32 +10,18 @@
 <div class="wholePost">
     <div class="panel panel-default clearfix">
         <div class="panel-heading panel-heading-blog">
-            <h4>@Model.Title</h4>
+            <h3>@Model.Title</h3>
             <br />
             <span class="postCategory">
                 Category: @Model.Category
             </span>
             <span class="authorPost">
-                by: @Model.Author, added @Model.Added.Date
+                by: @Model.Author, added @Model.Added.Date.ToShortDateString()
             </span>
         </div>
     </div>
     <div class="panel-body panel-height panel-post">
-        @Html.Raw(Model.Content.Replace(Environment.NewLine, "<br/>"));
-        <br />
-        <div class="code">
-            @Html.Raw("<div class=\"code\">" +
-                      "<span class=\"class\">public class</span> UserWebApiService : IUserWebApiService { " +
-                      "<span class=\"method\">public IEnumerable</span><UserApiModel> GetWebApiUserResults() {" +
-                      "using (var ctx = new UserContext()) {" +
-                      "ctx.Configuration.ProxyCreationEnabled = false;" +
-                      "<span class\"type\">var</span> users = UserModelConverter.ConvertUserToApiModel(ctx.Users.Include(x => x.ProgrammingSkills).First());" +
-                      "return users;" +
-                      "}" +
-                      "}" +
-                      "}" +
-                      "</div>")
-        </div>
+        @Html.Raw(Model.Content)
     </div>
     <div class="commentsPost"></div>
 </div>

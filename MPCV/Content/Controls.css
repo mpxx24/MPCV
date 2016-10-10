@@ -1,6 +1,6 @@
 ﻿.signature {
-    font-size: 16px;
-    font-family: Coves;
+    font-size: 14px;
+    font-family: YuGothic;
     color: honeydew;
     text-align: center;
     margin-top: 125px;
@@ -8,16 +8,25 @@
 
 .code {
     background-color: #e5e5e5;
-    font-size: 12px;
+    font-size: 14px;
     white-space: pre-wrap;
+    border: 1px darkgrey solid;
+}
+
+.code-block {
+    margin-left: 15px;
 }
 
 /* display keywords properly in <code> tag */
-.type, .class, .method, .enum, .static, .return, .new, .loop, .ienumerable, .iqueryable, .null{
+.type, .class, .method, .enum, .static, .return, .new, .loop, .null, .bool, .is-as{
     color: #0000cd;
 }
 
 .comment {
     color: green;
+}
+
+.contentFocus {
+    color: crimson;
 }
 
