@@ -23,7 +23,7 @@ namespace MPCV {
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
+            
             ConfigureWindsor(GlobalConfiguration.Configuration);
         }
 
@@ -32,8 +32,14 @@ namespace MPCV {
             container = new WindsorContainer();
             container.Install(FromAssembly.This());
             container.Kernel.Resolver.AddSubResolver(new CollectionResolver(container.Kernel, true));
+
+            //for Web API
             var dependencyResolver = new WindsorDependencyResolver(container);
             configuration.DependencyResolver = dependencyResolver;
+
+            //for MVC
+            var castleControllerFactory = new WindsorMvcControllerFactory(container);
+            ControllerBuilder.Current.SetControllerFactory(castleControllerFactory);
         }
     }
 }

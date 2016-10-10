@@ -201,6 +201,7 @@
     <Compile Include="Services\UserWebApiService.cs" />
     <Compile Include="Services\Windsor\WindsorDependencyResolver.cs" />
     <Compile Include="Services\Windsor\WindsorDependencyScope.cs" />
+    <Compile Include="Services\Windsor\WindsorMvcControllerFactory.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

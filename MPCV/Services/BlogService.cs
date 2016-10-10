@@ -6,7 +6,7 @@ using MPCV.Services.Interfaces;
 
 namespace MPCV.Services {
     public class BlogService : IBlogService {
-        public IEnumerable<Post> GetAllPosts() {
+        public List<Post> GetAllPosts() {
             using (var ctx = new UserContext()) {
                 return ctx.Posts.ToList();
             }
