@@ -11,16 +11,7 @@
         <div class="panel panel-default clearfix">
             <div class="panel-heading panel-heading-blog">
                 <h4>
-                    @Html.ActionLink(post.Title, "BlogPost", "Blog",
-                        new {
-                            title = post.Title,
-                            author = post.Author,
-                            added = post.Added,
-                            category = post.Category,
-                            content = post.Content,
-                            comments = post.Comments.ToList()
-                        },
-                        null)
+                    @Html.ActionLink(post.Title, "BlogPost", "Blog", new {id = post.Id}, null)
                 </h4>
                 <br/>
                 <span class="postCategory">

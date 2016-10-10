@@ -11,5 +11,11 @@ namespace MPCV.Services {
                 return ctx.Posts.ToList();
             }
         }
+
+        public Post GetPost(int id) {
+            using (var ctx = new UserContext()) {
+                return ctx.Posts.First(x => x.Id == id);
+            }
+        }
     }
 }
