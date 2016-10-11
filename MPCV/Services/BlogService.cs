@@ -1,21 +1,23 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using MPCV.DatabaseAccess;
 using MPCV.DatabaseAccess.Blog;
+using MPCV.Repository;
 using MPCV.Services.Interfaces;
 
 namespace MPCV.Services {
     public class BlogService : IBlogService {
+        private readonly IRepository repository;
+
+        public BlogService(IRepository repository) {
+            this.repository = repository;
+        }
+
         public List<Post> GetAllPosts() {
-            using (var ctx = new UserContext()) {
-                return ctx.Posts.ToList();
-            }
+            return repository.GetAll<Post>().ToList();
         }
 
         public Post GetPost(int id) {
-            using (var ctx = new UserContext()) {
-                return ctx.Posts.First(x => x.Id == id);
-            }
+            return repository.GetFirst<Post>(x => x.Id == id);
         }
     }
 }

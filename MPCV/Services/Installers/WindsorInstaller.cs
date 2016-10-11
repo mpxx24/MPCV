@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using MPCV.Repository;
 using MPCV.Services.Interfaces;
 
 namespace MPCV.Services.Installers {
@@ -14,6 +15,7 @@ namespace MPCV.Services.Installers {
                 );
 
             container.Register(
+                Component.For<IRepository>().ImplementedBy<Repository.Repository>(),
                 Component.For<IUserWebApiService>().ImplementedBy<UserWebApiService>(),
                 Component.For<IBlogService>().ImplementedBy<BlogService>()
                 );

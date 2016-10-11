@@ -6,7 +6,7 @@ using MPCV.DatabaseAccess.Blog;
 namespace MPCV.DataAccessTests {
     internal class Program {
         private static void Main(string[] args) {
-            using (var ctx = new UserContext()) {
+            using (var ctx = new AppContext()) {
                 AddUser(ctx);
                 var user = ctx.Users.First();
                 AddProgrammingSkill(user);
@@ -15,7 +15,7 @@ namespace MPCV.DataAccessTests {
             }
         }
 
-        private static User AddUser(UserContext ctx) {
+        private static User AddUser(AppContext ctx) {
             var user = new User
             {
                 FirstName = "Mariusz",
@@ -50,11 +50,11 @@ namespace MPCV.DataAccessTests {
             user.ProgrammingSkills.Add(pSkill1);
         }
 
-        private static void AddBlogPost(UserContext ctx) {
+        private static void AddBlogPost(AppContext ctx) {
             var content = "<div class=\"code\">" +
                            "<span class=\"class\">public class</span> UserWebApiService : IUserWebApiService { " +
                                 "<span class=\"method\">public IEnumerable</span><UserApiModel> GetWebApiUserResults() {" +
-                                    "using (var ctx = new UserContext()) {" +
+                                    "using (var ctx = new AppContext()) {" +
                                         "ctx.Configuration.ProxyCreationEnabled = false;" +
                                         "<span class\"type\">var</span> users = UserModelConverter.ConvertUserToApiModel(ctx.Users.Include(x => x.ProgrammingSkills).First());" +
                                         "return users;" +
