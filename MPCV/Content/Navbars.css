@@ -45,4 +45,18 @@
         margin-right: auto;
         width: 180px;
     }
+
+    .menu {
+        display: table;
+    }
+    
+    .social-icons {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .social-icons > a {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
