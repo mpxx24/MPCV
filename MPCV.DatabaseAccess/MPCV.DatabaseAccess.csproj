@@ -51,6 +51,13 @@
   <ItemGroup>
     <Compile Include="Blog\Post.cs" />
     <Compile Include="Blog\PostCategory.cs" />
+    <Compile Include="Migrations\201610171943568_AddTable.cs" />
+    <Compile Include="Migrations\201610171943568_AddTable.Designer.cs">
+      <DependentUpon>201610171943568_AddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="User\Activity.cs" />
+    <Compile Include="User\ActivityCategory.cs" />
     <Compile Include="User\ProgrammingSkill.cs" />
     <Compile Include="User\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +67,11 @@
     <None Include="App.config" />
     <None Include="bower.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610171943568_AddTable.resx">
+      <DependentUpon>201610171943568_AddTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

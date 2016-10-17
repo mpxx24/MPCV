@@ -2,16 +2,19 @@
 using System.Linq;
 using MPCV.DatabaseAccess;
 using MPCV.DatabaseAccess.Blog;
+using MPCV.DatabaseAccess.User;
 
 namespace MPCV.DataAccessTests {
     internal class Program {
         private static void Main(string[] args) {
             using (var ctx = new AppContext()) {
-                AddUser(ctx);
+                //AddUser(ctx);
                 var user = ctx.Users.First();
-                AddProgrammingSkill(user);
+                //AddProgrammingSkill(user);
+                //ctx.SaveChanges();
+                //AddBlogPost(ctx);
+                AddActivity(user);
                 ctx.SaveChanges();
-                AddBlogPost(ctx);
             }
         }
 
@@ -74,5 +77,18 @@ namespace MPCV.DataAccessTests {
             ctx.Posts.Add(post);
             ctx.SaveChanges();
         }
+
+        private static void AddActivity(User user) {
+            var act = new Activity
+            {
+                From = new DateTime(2007, 1, 1),
+                To = new DateTime(2010, 1, 1),
+                Category = ActivityCategory.Education,
+                Description = "Liceum Ogólnokształcące im. Adama Mickiewicza w Miastku"
+            };
+
+
+            user.Activities.Add(act);
+        }
     }
-}
+}   

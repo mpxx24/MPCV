@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using MPCV.DatabaseAccess;
+using MPCV.DatabaseAccess.User;
 using MPCV.Models.ApiModels;
 using MPCV.Models.Converters;
 using MPCV.Repository;

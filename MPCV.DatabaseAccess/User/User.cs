@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MPCV.DatabaseAccess {
+namespace MPCV.DatabaseAccess.User {
     /// <summary>
     ///     User class
     /// </summary>
@@ -11,8 +11,8 @@ namespace MPCV.DatabaseAccess {
         ///     Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
         public User() {
-            // ReSharper disable once VirtualMemberCallInContructor
             ProgrammingSkills = new List<ProgrammingSkill>();
+            Activities = new List<Activity>();
         }
 
         [Key]
@@ -26,5 +26,6 @@ namespace MPCV.DatabaseAccess {
         public string EmailAddress { get; set; }
 
         public virtual ICollection<ProgrammingSkill> ProgrammingSkills { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; } 
     }
 }

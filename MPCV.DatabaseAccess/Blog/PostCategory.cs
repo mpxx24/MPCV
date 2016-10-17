@@ -1,4 +1,4 @@
-﻿namespace MPCV.DatabaseAccess {
+﻿namespace MPCV.DatabaseAccess.Blog {
     public enum PostCategory {
         Csharp = 1,
 

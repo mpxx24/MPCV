@@ -32,7 +32,7 @@ html, body, .container-fluid, .row {
     position: absolute;
     overflow-y: scroll;
     font-size: 20px;
-    right: -20px;
+    right: -18px;
 }
 
 .h1 .h2 .h3 { }

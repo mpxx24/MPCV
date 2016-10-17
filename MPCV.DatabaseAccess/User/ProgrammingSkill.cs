@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MPCV.DatabaseAccess {
+namespace MPCV.DatabaseAccess.User {
     /// <summary>
     ///     Programing skill class
     /// </summary>
@@ -15,6 +15,6 @@ namespace MPCV.DatabaseAccess {
         public Guid UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+        public virtual DatabaseAccess.User.User User { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using MPCV.DatabaseAccess;
+using MPCV.DatabaseAccess.User;
 using MPCV.Models.ApiModels;
 
 namespace MPCV.Models.Converters {
@@ -25,7 +25,8 @@ namespace MPCV.Models.Converters {
         private static ICollection<ProgrammingSkillApiModel> ConvertProgrammingSkillsToApiModel(ICollection<ProgrammingSkill> skills) {
             return skills.Select(programmingSkill => new ProgrammingSkillApiModel
             {
-                SkillName = programmingSkill.SkillName, SkillLevel = programmingSkill.SkillLevel
+                SkillName = programmingSkill.SkillName,
+                SkillLevel = programmingSkill.SkillLevel
             }).ToList();
         }
     }
