@@ -3,7 +3,9 @@
     src: url("'../../../fonts/YuGothic/yugothib.ttf");
 }
 
-body { min-height: 100%; }
+body {
+     min-height: 100%;
+}
 
 .body-content {
     height: 100%;
@@ -11,7 +13,7 @@ body { min-height: 100%; }
     padding-right: 15px;
     width: auto;
     position: relative;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 input,
@@ -22,11 +24,15 @@ html, body, .container-fluid, .row {
     background-color: white;
     font-family: YuGothic;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-.PageText {
+.pageText {
+    height: 100%;
+    position: absolute;
+    overflow-y: scroll;
     font-size: 20px;
+    right: -20px;
 }
 
 .h1 .h2 .h3 { }
