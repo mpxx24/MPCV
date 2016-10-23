@@ -55,9 +55,21 @@
     <Compile Include="Migrations\201610171943568_AddTable.Designer.cs">
       <DependentUpon>201610171943568_AddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610231849379_AddHobbiesTable.cs" />
+    <Compile Include="Migrations\201610231849379_AddHobbiesTable.Designer.cs">
+      <DependentUpon>201610231849379_AddHobbiesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610231857437_AddNationalityColumnToUserTable.cs" />
+    <Compile Include="Migrations\201610231857437_AddNationalityColumnToUserTable.Designer.cs">
+      <DependentUpon>201610231857437_AddNationalityColumnToUserTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="User\Activity.cs" />
     <Compile Include="User\ActivityCategory.cs" />
+    <Compile Include="User\Hobby.cs" />
+    <Compile Include="User\Language.cs" />
+    <Compile Include="User\LanguageItem.cs" />
+    <Compile Include="User\LanguageLevel.cs" />
     <Compile Include="User\ProgrammingSkill.cs" />
     <Compile Include="User\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,7 +84,14 @@
     <EmbeddedResource Include="Migrations\201610171943568_AddTable.resx">
       <DependentUpon>201610171943568_AddTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610231849379_AddHobbiesTable.resx">
+      <DependentUpon>201610231849379_AddHobbiesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610231857437_AddNationalityColumnToUserTable.resx">
+      <DependentUpon>201610231857437_AddNationalityColumnToUserTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

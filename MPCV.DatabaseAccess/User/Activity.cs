@@ -9,5 +9,7 @@ namespace MPCV.DatabaseAccess.User {
         public DateTime To { get; set; }
         public string Description { get; set; }
         public ActivityCategory Category { get; set; }
+        
+        public virtual User User { get; set; }
     }
 }

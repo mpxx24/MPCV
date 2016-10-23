@@ -20,12 +20,15 @@ namespace MPCV.DatabaseAccess.User {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Birthdate { get; set; }
+        public string Nationality { get; set; }
         public string PlaceOfBirth { get; set; }
         public string CurrentAddress { get; set; }
         public string PhoneNumber { get; set; }
         public string EmailAddress { get; set; }
 
         public virtual ICollection<ProgrammingSkill> ProgrammingSkills { get; set; }
-        public virtual ICollection<Activity> Activities { get; set; } 
+        public virtual ICollection<Activity> Activities { get; set; }
+        public virtual ICollection<Language> Languages { get; set; }
+        public virtual ICollection<Hobby> Hobbies { get; set; }
     }
 }
