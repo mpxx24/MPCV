@@ -1,2 +1,2 @@
-﻿var MPCV = function () {
+﻿var MPCV = function() {
 };

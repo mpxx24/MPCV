@@ -20,13 +20,13 @@
     }
 
     #side-panel-ul > li {
-        margin-left: 10px;
-        width: 250px;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #333333;
     }
 
     #side-panel-ul > li > a {
         align-items: center;
-        border-bottom: 1px solid #333333;
         color: #00ACED;
         display: flex;
         font-family: YuGothic;
@@ -53,10 +53,21 @@
     .social-icons {
         text-align: center;
         padding-top: 20px;
+        width: inherit;
+    }
+}
+
+@media (max-width: 1095px) {
+    .social-icons {
+        display: none;
     }
 
-    .social-icons > a {
-        margin-left: 10px;
-        margin-right: 10px;
+    .circular-image {
+        display: none;
+    }
+
+    #side-panel-ul {
+        list-style-type: none;
+        padding-top: 0px;
     }
 }

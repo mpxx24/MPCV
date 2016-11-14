@@ -7,10 +7,10 @@ using MPCV.Repository;
 using MPCV.Services.Interfaces;
 
 namespace MPCV.Services {
-    public class UserWebApiService : IUserWebApiService {
+    public class UserService : IUserService {
         private readonly IRepository repository;
 
-        public UserWebApiService(IRepository repository) {
+        public UserService(IRepository repository) {
             this.repository = repository;
         }
 
@@ -19,6 +19,11 @@ namespace MPCV.Services {
             var users = repository.GetAll<User>();
 
             return UserModelConverter.ConvertUserToApiModel(users.First());
+        }
+        public User GetFirstUser() {
+            var users = repository.GetAll<User>();
+
+            return users.First();
         }
     }
 }

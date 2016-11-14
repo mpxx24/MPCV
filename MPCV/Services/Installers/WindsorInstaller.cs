@@ -16,7 +16,7 @@ namespace MPCV.Services.Installers {
 
             container.Register(
                 Component.For<IRepository>().ImplementedBy<Repository.Repository>(),
-                Component.For<IUserWebApiService>().ImplementedBy<UserWebApiService>(),
+                Component.For<IUserService>().ImplementedBy<UserService>(),
                 Component.For<IBlogService>().ImplementedBy<BlogService>()
                 );
         }

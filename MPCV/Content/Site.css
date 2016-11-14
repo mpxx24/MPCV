@@ -36,3 +36,20 @@ html, body, .container-fluid, .row {
 }
 
 .h1 .h2 .h3 { }
+
+/**/
+/*Personal information site*/
+/**/
+
+.personalInfoText {
+    padding-left: 20px;
+}
+
+.personalInformation, .personalEducation, .personalExperience, .personalProgrammingSkills {
+    border-left: 5px solid #00ACED;
+}
+
+.personalInformation > div > span {
+    display: block;
+    padding-bottom: 10px;
+}

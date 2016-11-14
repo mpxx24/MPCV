@@ -19,5 +19,14 @@ namespace MPCV.Services {
         public Post GetPost(int id) {
             return repository.GetFirst<Post>(x => x.Id == id);
         }
+
+        public List<Post> GetXLatestPosts(int howMany) {
+            var allPosts = repository.GetAll<Post>().ToList();
+
+            if (allPosts.Count >= howMany) {
+                return allPosts;
+            }
+            return allPosts.OrderByDescending(x => x.Added).Take(howMany).ToList();
+        } 
     }
 }

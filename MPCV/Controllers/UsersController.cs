@@ -5,15 +5,15 @@ using MPCV.Services.Interfaces;
 
 namespace MPCV.Controllers {
     public class UsersController : ApiController {
-        private readonly IUserWebApiService userWebApiService;
+        private readonly IUserService userService;
         
-        public UsersController(IUserWebApiService userWebApiService) {
-            this.userWebApiService = userWebApiService;
+        public UsersController(IUserService userService) {
+            this.userService = userService;
         }
 
         // GET api/users
         public IEnumerable<UserApiModel> Get() {
-            return userWebApiService.GetWebApiUserResults();
+            return userService.GetWebApiUserResults();
         }
     }
 }

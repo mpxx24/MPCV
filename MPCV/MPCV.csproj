@@ -186,6 +186,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,8 +200,8 @@
     <Compile Include="Services\BlogService.cs" />
     <Compile Include="Services\Installers\WindsorInstaller.cs" />
     <Compile Include="Services\Interfaces\IBlogService.cs" />
-    <Compile Include="Services\Interfaces\IUserWebApiService.cs" />
-    <Compile Include="Services\UserWebApiService.cs" />
+    <Compile Include="Services\Interfaces\IUserService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\Windsor\WindsorDependencyResolver.cs" />
     <Compile Include="Services\Windsor\WindsorDependencyScope.cs" />
     <Compile Include="Services\Windsor\WindsorMvcControllerFactory.cs" />
@@ -212,6 +213,9 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\carousel\owl.carousel.css" />
+    <Content Include="Content\carousel\owl.theme.css" />
+    <Content Include="Content\carousel\owl.transitions.css" />
     <Content Include="Content\Controls.css" />
     <Content Include="Content\icons\facebook.png" />
     <Content Include="Content\icons\github.png" />
@@ -265,6 +269,8 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\carousel\owl.carousel.js" />
+    <Content Include="Scripts\carousel\owl.carousel.min.js" />
     <Content Include="Scripts\my scripts\Graphs.js" />
     <Content Include="fonts\YuGothic\yugothib.ttf" />
     <None Include="Scripts\jquery\jquery-1.12.4.intellisense.js" />

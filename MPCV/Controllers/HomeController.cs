@@ -5,13 +5,16 @@ using MPCV.Services.Interfaces;
 namespace MPCV.Controllers {
     public class HomeController : Controller {
         private readonly IBlogService blogService;
+        private readonly IUserService userService;
 
-        public HomeController(IBlogService blogService) {
+        public HomeController(IBlogService blogService, IUserService userService) {
             this.blogService = blogService;
+            this.userService = userService;
         }
 
         public ActionResult Index() {
-            return View();
+            var posts = blogService.GetAllPosts();
+            return View(posts);
         }
 
         public ActionResult PersonalInfo() {
@@ -19,7 +22,9 @@ namespace MPCV.Controllers {
         }
 
         public ActionResult ProgrammingSkills() {
-            return View();
+            var user = userService.GetFirstUser();
+
+            return View(user);
         }
 
         public ActionResult ProjectExamples() {

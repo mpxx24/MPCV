@@ -2,6 +2,7 @@
 /// <reference path="../bootstrap/bootstrap.min.js" />
 /// <reference path="../bootstrap/modernizr-2.6.2.js" />
 /// <reference path="../bootstrap/respond.js" />
+/// <reference path="../carousel/owl.carousel.js" />
 /// <reference path="../charts/uvcharts.js" />
 /// <reference path="jquery.validate.min.js" />
 /// <reference path="jquery.validate.unobtrusive.min.js" />
