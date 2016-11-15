@@ -13,7 +13,8 @@ namespace MPCV.Controllers {
         }
 
         public ActionResult Index() {
-            var posts = blogService.GetAllPosts();
+            var posts = blogService.GetXLatestPosts(6);
+
             return View(posts);
         }
 

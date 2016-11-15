@@ -213,6 +213,8 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\carousel\AjaxLoader.gif" />
+    <Content Include="Content\carousel\grabbing.png" />
     <Content Include="Content\carousel\owl.carousel.css" />
     <Content Include="Content\carousel\owl.theme.css" />
     <Content Include="Content\carousel\owl.transitions.css" />
@@ -290,6 +292,7 @@
     <Content Include="Scripts\bootstrap\respond.js" />
     <Content Include="Scripts\bootstrap\respond.min.js" />
     <Content Include="Scripts\charts\uvcharts.js" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -301,7 +304,6 @@
     <Content Include="Scripts\jquery\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\PersonalInfo.cshtml" />

@@ -1,16 +1,19 @@
-﻿@{
+﻿@model List<MPCV.DatabaseAccess.Blog.Post>
+@{
     ViewBag.Title = "Home";
 }
-
-<link href="~/Content/carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
-<link href="~/Content/carousel/owl.theme.css" rel="stylesheet" type="text/css"/>
-<script src="~/Scripts/jquery/jquery-1.12.4.min.js"></script>
-<script src="~/Scripts/jquery/jquery-ui-1.12.1.js"></script>
-<script src="~/Scripts/carousel/owl.carousel.min.js"></script>
 
 <h2>Home</h2>
 
 <div id="owl-example" class="owl-carousel">
+    @{
+        foreach (var post in Model) {
+            <div>
+                <h3>@post.Title</h3>
+                <p>@post.ShortDescription</p>
+            </div>
+        }
+    }
     <div> Your Content </div>
     <div> Your Content </div>
     <div> Your Content </div>
@@ -23,7 +26,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $("#owl-example").owlCarousel({
-            items: 1
+            items: 2
         });
     });
 </script>
