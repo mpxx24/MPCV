@@ -14,14 +14,24 @@
     max-height: 50px;
 }
 
-.commentsBlog {
+.commentsCountBlog {
     float: right;
     font-size: 16px;
 }
-.commentsBlog > span {
+.commentsCountBlog > span {
     margin-right: 5px;
 }
 
 .authorPost {
     float: right;
+}
+
+.wholePost {
+    float: left;
+}
+
+.commentsPost {
+    border: 1px #202020 dashed;
+    float: left;
+    clear: both;
 }

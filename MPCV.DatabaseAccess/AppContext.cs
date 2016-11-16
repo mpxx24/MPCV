@@ -13,6 +13,7 @@ namespace MPCV.DatabaseAccess {
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Hobby> Hobbies { get; set; }
+        public DbSet<Comment> Comments { get; set; } 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             Database.SetInitializer<AppContext>(null);

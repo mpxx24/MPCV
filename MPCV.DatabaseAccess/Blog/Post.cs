@@ -12,6 +12,7 @@ namespace MPCV.DatabaseAccess.Blog {
         public string Author { get; set; }
         public DateTime Added { get; set; }
         public PostCategory Category { get; set; }
-        public List<string> Comments { get; set; } 
+
+        public virtual List<Comment> Comments { get; set; } 
     }
 }

@@ -9,7 +9,9 @@
     @{
         foreach (var post in Model) {
             <div>
-                <h3>@post.Title</h3>
+                <div class="panel-heading panel-heading-blog">
+                    <h3>@post.Title</h3>
+                </div>
                 <p>@post.ShortDescription</p>
             </div>
         }

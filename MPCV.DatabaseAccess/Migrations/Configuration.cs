@@ -1,5 +1,7 @@
+using System;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using MPCV.DatabaseAccess.Blog;
 using MPCV.DatabaseAccess.User;
 
 namespace MPCV.DatabaseAccess.Migrations {

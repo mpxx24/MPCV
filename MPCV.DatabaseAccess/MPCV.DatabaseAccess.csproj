@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blog\Comment.cs" />
     <Compile Include="Blog\Post.cs" />
     <Compile Include="Blog\PostCategory.cs" />
     <Compile Include="Migrations\201610171943568_AddTable.cs" />
@@ -62,6 +63,10 @@
     <Compile Include="Migrations\201610231857437_AddNationalityColumnToUserTable.cs" />
     <Compile Include="Migrations\201610231857437_AddNationalityColumnToUserTable.Designer.cs">
       <DependentUpon>201610231857437_AddNationalityColumnToUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611161729167_added comments.cs" />
+    <Compile Include="Migrations\201611161729167_added comments.Designer.cs">
+      <DependentUpon>201611161729167_added comments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="User\Activity.cs" />
@@ -89,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610231857437_AddNationalityColumnToUserTable.resx">
       <DependentUpon>201610231857437_AddNationalityColumnToUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161729167_added comments.resx">
+      <DependentUpon>201611161729167_added comments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
