@@ -7,18 +7,34 @@
 
 <div id="owl-example" class="owl-carousel">
     @{
-        foreach (var post in Model) {
-            <div>
-                <div class="panel-heading panel-heading-blog">
+        foreach (var post in Model)
+        {
+            <div class="carouselElement">
+                <div class="carouselHeader">
                     <h3>@post.Title</h3>
                 </div>
                 <p>@post.ShortDescription</p>
             </div>
         }
     }
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
+    <div class="carouselElement">
+        <div class="carouselHeader">
+            <h3>test entry</h3>
+        </div>
+        <p>aaaaaaand some text</p>
+    </div>
+    <div class="carouselElement">
+        <div class="carouselHeader">
+            <h3>again</h3>
+        </div>
+        <p>aaaaaaand some text</p>
+    </div>
+    <div class="carouselElement">
+        <div class="carouselHeader">
+            <h3>and again</h3>
+        </div>
+        <p>aaaaaaand some text</p>
+    </div>
 </div>
 
 <div class="pageText">
