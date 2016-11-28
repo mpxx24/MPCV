@@ -1,5 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using MPCV.Models.JsonModels;
 using MPCV.Services.Interfaces;
 
 namespace MPCV.Controllers {
@@ -48,6 +49,22 @@ namespace MPCV.Controllers {
             var posts = blogService.GetAllPosts();
 
             return View(posts);
+        }
+
+        public JsonResult SkillsForGraph() {
+            var skills = userService.GetFirstUser().ProgrammingSkills;
+
+            var result = new ProgrammingSkillForChart();
+
+            foreach (var programmingSkill in skills) {
+                result.ProgrammingSkills.Add(new ChatSkillSerializable
+                {
+                    name = programmingSkill.SkillName,
+                    value = programmingSkill.SkillLevel
+                });
+            }
+
+            return Json(result);
         }
     }
 }

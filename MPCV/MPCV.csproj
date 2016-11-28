@@ -194,6 +194,7 @@
     <Compile Include="Models\ApiModels\ProgrammingSkillApiModel.cs" />
     <Compile Include="Models\ApiModels\UserApiModel.cs" />
     <Compile Include="Models\Converters\UserModelConverter.cs" />
+    <Compile Include="Models\JsonModels\ProgrammingSkillForChart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />

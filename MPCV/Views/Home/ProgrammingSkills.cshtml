@@ -32,38 +32,41 @@
     <div class="personalEducation">
         <div class="personalInfoText">
             <h2>Wykształcenie</h2>
-            @foreach (var activity in Model.Activities.Where(x => x.Category == ActivityCategory.Education).OrderByDescending(x => x.From)) {
+            @foreach (var activity in Model.Activities.Where(x => x.Category == ActivityCategory.Education).OrderByDescending(x => x.From))
+            {
                 <div class="fromToDate">
                     @Html.Label(activity.From.Year.ToString())
                     -
                     @Html.Label(activity.To.Year.ToString())
                 </div>
-                <div class="activity">
-                    @Html.Label(activity.Description)
-                </div>
+                    <div class="activity">
+                        @Html.Label(activity.Description)
+                    </div>
             }
         </div>
     </div>
     <div class="personalExperience">
         <div class="personalInfoText">
             <h2>Doświadczenie</h2>
-            @foreach (var activity in Model.Activities.Where(x => x.Category == ActivityCategory.Experience).OrderByDescending(x => x.From)) {
+            @foreach (var activity in Model.Activities.Where(x => x.Category == ActivityCategory.Experience).OrderByDescending(x => x.From))
+            {
                 <div class="fromToDate">
                     @Html.Label(activity.From.Year.ToString())
                     -
                     @Html.Label(activity.To.Year.ToString())
                 </div>
-                <div class="activity">
-                    @Html.Label(activity.Description)
-                </div>
+                    <div class="activity">
+                        @Html.Label(activity.Description)
+                    </div>
             }
         </div>
     </div>
     <div class="personalProgrammingSkills">
         <h2 class="personalInfo">ProgrammingSkills</h2>
         <div id="uv-div"></div>
-        <script type="text/javascript">
-            GraphHelper.programmingSkills();
-        </script>
     </div>
 </div>
+
+<script type="text/javascript">
+    GraphHelper.programmingSkills();
+</script>
