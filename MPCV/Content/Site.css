@@ -53,3 +53,57 @@ html, body, .container-fluid, .row {
     display: block;
     padding-bottom: 10px;
 }
+
+/**/
+/*Custom assistant*/
+/**/
+@media (min-width: 992px) {
+    #custom-assistant {
+        position: fixed;
+        right: 1%;
+        top: 70%;
+    }
+
+    .custom-assistant-img {
+        max-height: 150px;
+        max-width: 200px;
+        background-attachment: fixed;
+        z-index: 10000; 
+    }
+
+    .custom-assistant-speechCloud {
+        display: block;
+        position: relative;
+        text-align: center;
+        line-height: 100px;
+        height: 100px;
+        width: 250px;
+        border-radius: 45%;
+        border: 1px solid black;
+        z-index: 100001;
+    }
+
+    .custom-assistant-speechCloud:before {
+        content: '';
+        position: absolute;
+        border: 19px solid;
+        border-color: black black transparent transparent;
+        height: 0;
+        width: 0;
+        left: 30px;
+        top: 100px;
+        z-index: 100003;
+    }
+
+    .custom-assistant-speechCloud:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 31px;
+        top: 100px;
+        border: 18px solid;
+        border-color: white white transparent transparent;
+        z-index: 100004;
+    }
+}
