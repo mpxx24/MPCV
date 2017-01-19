@@ -5,18 +5,11 @@ var Assistant = (function () {
         this.initializeAssistantsActions();
     }
     Assistant.prototype.initializeAssistant = function () {
-        this.textBubbleDiv = $("#" + this.configuration.TalkBubbleId);
+        this.textBubbleDiv = $("#" + this.configuration.TalkBubbleId + " > p");
     };
     ;
     Assistant.prototype.initializeAssistantsActions = function () {
-        var _this = this;
         this.sayLetterByLetter("Hi, welcome at " + document.title + " view. Do you need any help?");
-        var yesButton = $('<input type="button" value="Yes"/>');
-        var noButton = $('<input type="button" value="No"/>');
-        yesButton.on("click", function () { _this.onYesHelpButtonClicked(); });
-        noButton.on("click", function () { _this.onNoHelpButtonClicked(); });
-        $("#" + this.configuration.AssistantId).append(yesButton);
-        $("#" + this.configuration.AssistantId).append(noButton);
     };
     ;
     Assistant.prototype.sayLetterByLetter = function (message) {
@@ -31,12 +24,25 @@ var Assistant = (function () {
             }
             else {
                 clearInterval(interval);
+                _this.showYesNoButtons();
             }
         }, 50);
     };
+    ;
+    Assistant.prototype.showYesNoButtons = function () {
+        var _this = this;
+        var yesButton = $('<input type="button" value="Yes"/>');
+        var noButton = $('<input type="button" value="No"/>');
+        yesButton.on("click", function () { _this.onYesHelpButtonClicked(); });
+        noButton.on("click", function () { _this.onNoHelpButtonClicked(); });
+        $("#" + this.configuration.AssistantId).append(yesButton);
+        $("#" + this.configuration.AssistantId).append(noButton);
+    };
+    ;
     Assistant.prototype.setTextBubbleText = function (message) {
         this.textBubbleDiv.text(message);
     };
+    ;
     Assistant.prototype.setQuestionsFlowForCurrentSite = function () {
     };
     ;
@@ -47,10 +53,14 @@ var Assistant = (function () {
     };
     ;
     Assistant.prototype.onYesHelpButtonClicked = function () {
-        alert("YES WAS CLICKED");
+        this.setTextBubbleText("");
+        var ulWithOptions = "<ul>\n            <li><a href=\"http://google.pl\">google</a>\n            <li><a href=\"http://reddit.com\">reddit</a>\n            </ul>";
+        this.textBubbleDiv.append(ulWithOptions);
     };
+    ;
     Assistant.prototype.onNoHelpButtonClicked = function () {
         alert("NO WAS CLICKED");
     };
+    ;
     return Assistant;
 }());

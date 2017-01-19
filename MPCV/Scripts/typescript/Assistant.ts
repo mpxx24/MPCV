@@ -14,18 +14,11 @@ class Assistant {
     }
 
     initializeAssistant(): void {
-        this.textBubbleDiv = $(`#${this.configuration.TalkBubbleId}`);
+        this.textBubbleDiv = $(`#${this.configuration.TalkBubbleId} > p`);
     };
 
     initializeAssistantsActions(): void {
         this.sayLetterByLetter(`Hi, welcome at ${document.title} view. Do you need any help?`);
-        var yesButton = $('<input type="button" value="Yes"/>');
-        var noButton = $('<input type="button" value="No"/>');
-        yesButton.on("click", () => { this.onYesHelpButtonClicked() });
-        noButton.on("click", () => { this.onNoHelpButtonClicked() });
-
-        $(`#${this.configuration.AssistantId}`).append(yesButton);
-        $(`#${this.configuration.AssistantId}`).append(noButton);
     };
 
     sayLetterByLetter(message: string): void {
@@ -39,13 +32,24 @@ class Assistant {
                 index++;
             } else {
                 clearInterval(interval);
+                this.showYesNoButtons();
             }
         }, 50);
-    }
+    };
 
-    setTextBubbleText(message: string) {
+    showYesNoButtons(): void {
+        var yesButton = $('<input type="button" value="Yes"/>');
+        var noButton = $('<input type="button" value="No"/>');
+        yesButton.on("click", () => { this.onYesHelpButtonClicked() });
+        noButton.on("click", () => { this.onNoHelpButtonClicked() });
+
+        $(`#${this.configuration.AssistantId}`).append(yesButton);
+        $(`#${this.configuration.AssistantId}`).append(noButton);
+    };
+
+    setTextBubbleText(message: string): void {
         this.textBubbleDiv.text(message);
-    }
+    };
 
     setQuestionsFlowForCurrentSite(): void {
     };
@@ -57,10 +61,16 @@ class Assistant {
     };
 
     onYesHelpButtonClicked(): void {
-        alert("YES WAS CLICKED");
-    }
+        this.setTextBubbleText("");
+        var ulWithOptions =
+            `<ul>
+            <li><a href="http://google.pl">google</a>
+            <li><a href="http://reddit.com">reddit</a>
+            </ul>`;
+        this.textBubbleDiv.append(ulWithOptions);
+    };
 
     onNoHelpButtonClicked(): void {
         alert("NO WAS CLICKED");
-    }
+    };
 }

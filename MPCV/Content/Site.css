@@ -75,15 +75,20 @@ html, body, .container-fluid, .row {
         display: inline-block;
         position: absolute;
         text-align: center;
+        word-break: normal;
+        vertical-align: middle;
         bottom: 110%;
         right: 0;
         font-size: 13px;
-        line-height: 100px;
-        height: 100px;
+        height: 110px;
         width: 250px;
         border-radius: 45%;
         border: 1px solid black;
         z-index: 100001;
+    }
+
+    .custom-assistant-speechCloud > p {
+        padding-top: 10%;
     }
 
     .custom-assistant-speechCloud:before {
