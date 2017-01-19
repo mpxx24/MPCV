@@ -1,9 +1,13 @@
 var Assistant = (function () {
     function Assistant(configuration) {
         this.configuration = configuration;
+        this.initializeView();
         this.initializeAssistant();
         this.initializeAssistantsActions();
     }
+    Assistant.prototype.initializeView = function () {
+    };
+    ;
     Assistant.prototype.initializeAssistant = function () {
         this.textBubbleDiv = $("#" + this.configuration.TalkBubbleId + " > p");
     };
@@ -25,6 +29,7 @@ var Assistant = (function () {
             else {
                 clearInterval(interval);
                 _this.showYesNoButtons();
+                _this.showAssistantInfoLink();
             }
         }, 50);
     };
@@ -60,6 +65,19 @@ var Assistant = (function () {
     ;
     Assistant.prototype.onNoHelpButtonClicked = function () {
         alert("NO WAS CLICKED");
+    };
+    ;
+    Assistant.prototype.showAssistanInfo = function () {
+        alert("INFORMATIONS");
+    };
+    ;
+    Assistant.prototype.showAssistantInfoLink = function () {
+        $("#" + this.configuration.InfoLinkId).click(this.infoLinkClicked.bind(this));
+        $("#" + this.configuration.InfoLinkId).show();
+    };
+    ;
+    Assistant.prototype.infoLinkClicked = function () {
+        alert("test info click");
     };
     ;
     return Assistant;

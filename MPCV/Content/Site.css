@@ -81,7 +81,7 @@ html, body, .container-fluid, .row {
         right: 0;
         font-size: 13px;
         height: 110px;
-        width: 250px;
+        width: 280px;
         border-radius: 45%;
         border: 1px solid black;
         z-index: 100001;
@@ -113,5 +113,10 @@ html, body, .container-fluid, .row {
         border: 17px solid;
         border-color: white white transparent transparent;
         z-index: 100004;
+    }
+
+    #custom-assistant-infoLink {
+        left: 0;
+        display: none;
     }
 }

@@ -1,6 +1,7 @@
 ﻿interface IAssistantConfiguration {
     TalkBubbleId: string;
     AssistantId: string;
+    InfoLinkId: string;
 }
 
 class Assistant {
@@ -9,9 +10,13 @@ class Assistant {
 
     constructor(configuration: IAssistantConfiguration) {
         this.configuration = configuration;
+        this.initializeView();
         this.initializeAssistant();
         this.initializeAssistantsActions();
     }
+
+    initializeView() {
+    };
 
     initializeAssistant(): void {
         this.textBubbleDiv = $(`#${this.configuration.TalkBubbleId} > p`);
@@ -33,6 +38,7 @@ class Assistant {
             } else {
                 clearInterval(interval);
                 this.showYesNoButtons();
+                this.showAssistantInfoLink();
             }
         }, 50);
     };
@@ -72,5 +78,18 @@ class Assistant {
 
     onNoHelpButtonClicked(): void {
         alert("NO WAS CLICKED");
+    };
+
+    showAssistanInfo() {
+        alert("INFORMATIONS");
+    };
+
+    showAssistantInfoLink() {
+        $(`#${this.configuration.InfoLinkId}`).click(this.infoLinkClicked.bind(this));
+        $(`#${this.configuration.InfoLinkId}`).show();
+    };
+
+    infoLinkClicked(): void {
+        alert("test info click");
     };
 }

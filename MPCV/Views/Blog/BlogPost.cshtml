@@ -1,6 +1,7 @@
 ﻿@model MPCV.DatabaseAccess.Blog.Post
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = @Model.Title.ToUpper() + " post";
 }
 
 <div class="wholePost">
