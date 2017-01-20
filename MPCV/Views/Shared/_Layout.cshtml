@@ -23,6 +23,7 @@
     <script src="~/Scripts/carousel/owl.carousel.min.js"></script>
 
     <script src="~/Scripts/typescript/Assistant.js"></script>
+    <script src="~/Scripts/typescript/HtmlControlsHelper.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -68,16 +69,35 @@
                 <p></p>
             </div>
             <img class="custom-assistant-img" src="../../Content/assistant/assistant.png" alt="assistant.png"/>
-            <a id="custom-assistant-infoLink" href="#">info</a>
+            <a id="custom-assistant-infoLink" href="#assistanInformationsModal" data-toggle="modal">info</a>
         </div>
     </div>
 </div>
 </body>
 </html>
 
+@*modals*@
+
+<div id="assistanInformationsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Informations about custom assistant</h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @* ReSharper disable once ConstructorCallNotUsed *@
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         var config = {
             TalkBubbleId: "talk-bubble",
             AssistantId: "custom-assistant",

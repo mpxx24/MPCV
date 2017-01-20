@@ -57,6 +57,7 @@ html, body, .container-fluid, .row {
 /**/
 /*Custom assistant*/
 /**/
+
 @media (min-width: 992px) {
     #custom-assistant {
         position: fixed;
@@ -116,7 +117,6 @@ html, body, .container-fluid, .row {
     }
 
     #custom-assistant-infoLink {
-        left: 0;
-        display: none;
+        display: b;
     }
 }

@@ -40,12 +40,12 @@ class Assistant {
                 this.showYesNoButtons();
                 this.showAssistantInfoLink();
             }
-        }, 50);
+        }, 40);
     };
 
     showYesNoButtons(): void {
-        var yesButton = $('<input type="button" value="Yes"/>');
-        var noButton = $('<input type="button" value="No"/>');
+        var yesButton = $(HtmlControlsHelper.HtmlButton("yes"));
+        var noButton = $(HtmlControlsHelper.HtmlButton("no"));
         yesButton.on("click", () => { this.onYesHelpButtonClicked() });
         noButton.on("click", () => { this.onNoHelpButtonClicked() });
 
@@ -68,11 +68,8 @@ class Assistant {
 
     onYesHelpButtonClicked(): void {
         this.setTextBubbleText("");
-        var ulWithOptions =
-            `<ul>
-            <li><a href="http://google.pl">google</a>
-            <li><a href="http://reddit.com">reddit</a>
-            </ul>`;
+        var ulWithOptions = HtmlControlsHelper.HtmlUl(2, ["option1", "option2"]);
+        console.log(ulWithOptions);
         this.textBubbleDiv.append(ulWithOptions);
     };
 
@@ -85,11 +82,9 @@ class Assistant {
     };
 
     showAssistantInfoLink() {
-        $(`#${this.configuration.InfoLinkId}`).click(this.infoLinkClicked.bind(this));
+        //$(`#${this.configuration.InfoLinkId}`).click(this.infoLinkClicked.bind(this));
         $(`#${this.configuration.InfoLinkId}`).show();
     };
 
-    infoLinkClicked(): void {
-        alert("test info click");
-    };
+    //infoLinkClicked(): void {};
 }

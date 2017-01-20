@@ -31,13 +31,13 @@ var Assistant = (function () {
                 _this.showYesNoButtons();
                 _this.showAssistantInfoLink();
             }
-        }, 50);
+        }, 40);
     };
     ;
     Assistant.prototype.showYesNoButtons = function () {
         var _this = this;
-        var yesButton = $('<input type="button" value="Yes"/>');
-        var noButton = $('<input type="button" value="No"/>');
+        var yesButton = $(HtmlControlsHelper.HtmlButton("yes"));
+        var noButton = $(HtmlControlsHelper.HtmlButton("no"));
         yesButton.on("click", function () { _this.onYesHelpButtonClicked(); });
         noButton.on("click", function () { _this.onNoHelpButtonClicked(); });
         $("#" + this.configuration.AssistantId).append(yesButton);
@@ -59,7 +59,8 @@ var Assistant = (function () {
     ;
     Assistant.prototype.onYesHelpButtonClicked = function () {
         this.setTextBubbleText("");
-        var ulWithOptions = "<ul>\n            <li><a href=\"http://google.pl\">google</a>\n            <li><a href=\"http://reddit.com\">reddit</a>\n            </ul>";
+        var ulWithOptions = HtmlControlsHelper.HtmlUl(2, ["option1", "option2"]);
+        console.log(ulWithOptions);
         this.textBubbleDiv.append(ulWithOptions);
     };
     ;
@@ -72,13 +73,10 @@ var Assistant = (function () {
     };
     ;
     Assistant.prototype.showAssistantInfoLink = function () {
-        $("#" + this.configuration.InfoLinkId).click(this.infoLinkClicked.bind(this));
+        //$(`#${this.configuration.InfoLinkId}`).click(this.infoLinkClicked.bind(this));
         $("#" + this.configuration.InfoLinkId).show();
-    };
-    ;
-    Assistant.prototype.infoLinkClicked = function () {
-        alert("test info click");
     };
     ;
     return Assistant;
 }());
+//# sourceMappingURL=Assistant.js.map

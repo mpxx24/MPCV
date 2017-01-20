@@ -331,6 +331,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\typescript\Assistant.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\HtmlControlsHelper.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
