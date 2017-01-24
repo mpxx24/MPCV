@@ -22,8 +22,11 @@
     <script src="~/Scripts/my scripts/Animations.js"></script>
     <script src="~/Scripts/carousel/owl.carousel.min.js"></script>
 
+    @* TS *@
     <script src="~/Scripts/typescript/Assistant.js"></script>
     <script src="~/Scripts/typescript/HtmlControlsHelper.js"></script>
+    <script src="~/Scripts/typescript/BlogPost.js"></script>
+    <script src="~/Scripts/typescript/IBaseView.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -42,8 +45,7 @@
             <div class="navbar-collapse collapse sidebar-navbar-collapse">
                 <div class="menu">
                     <ul id="side-panel-ul" class="nav navbar-nav">
-                        <li>@Html.ActionLink("Personal info", "PersonalInfo", "Home", new {area = ""}, new {})</li>
-                        <li>@Html.ActionLink("Programming skills", "ProgrammingSkills", "Home", new {area = ""}, new {})</li>
+                        <li>@Html.ActionLink("Home", "Index", "Home", new {area = ""}, new {})</li>
                         <li>@Html.ActionLink("Blog", "Blog", "Home", new {area = ""}, new {})</li>
                         <li>@Html.ActionLink("Project examples", "ProjectExamples", "Home", new {area = ""}, new {})</li>
                         <li><a href="https://github.com/mpxx24">Github repository</a></li>
@@ -64,7 +66,7 @@
         <div class="col-md-6 col-md-offset-2 body-content">
             @RenderBody()
         </div>
-        <div id="custom-assistant">
+        <div id="custom-assistant" style="display: none">
             <div id="talk-bubble" class="custom-assistant-speechCloud">
                 <p></p>
             </div>

@@ -14,45 +14,41 @@ namespace MPCV.Controllers {
         }
 
         public ActionResult Index() {
-            var posts = blogService.GetXLatestPosts(6);
+            var posts = this.blogService.GetXLatestPosts(6);
 
-            return View(posts);
+            return this.View(posts);
         }
-
-        public ActionResult PersonalInfo() {
-            return View();
-        }
-
+        
         public ActionResult ProgrammingSkills() {
-            var user = userService.GetFirstUser();
+            var user = this.userService.GetFirstUser();
 
-            return View(user);
+            return this.View(user);
         }
 
         public ActionResult ProjectExamples() {
-            return View();
+            return this.View();
         }
 
         public ActionResult GithubRepository() {
-            return View();
+            return this.View();
         }
 
         public ActionResult DownloadCv() {
-            return View();
+            return this.View();
         }
 
         public ActionResult Contact() {
-            return View();
+            return this.View();
         }
 
         public ActionResult Blog() {
-            var posts = blogService.GetAllPosts();
+            var posts = this.blogService.GetAllPosts();
 
-            return View(posts);
+            return this.View(posts);
         }
 
         public JsonResult SkillsForGraph() {
-            var skills = userService.GetFirstUser().ProgrammingSkills;
+            var skills = this.userService.GetFirstUser().ProgrammingSkills;
 
             var result = new ProgrammingSkillForChart();
 
@@ -64,7 +60,7 @@ namespace MPCV.Controllers {
                 });
             }
 
-            return Json(result);
+            return this.Json(result);
         }
     }
 }

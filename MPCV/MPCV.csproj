@@ -303,7 +303,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\PersonalInfo.cshtml" />
     <Content Include="Views\Home\ProgrammingSkills.cshtml" />
     <Content Include="Views\Home\ProjectExamples.cshtml" />
     <Content Include="Views\Home\GithubRepository.cshtml" />
@@ -331,7 +330,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\typescript\Assistant.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\BlogPost.ts" />
     <TypeScriptCompile Include="Scripts\typescript\HtmlControlsHelper.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\IBaseView.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>

@@ -15,5 +15,9 @@ namespace MPCV.Controllers {
             var post = this.blogService.GetPost(id);
             return View(post);      
         }
+
+        public ActionResult AddComment(string p) {
+            return null;
+        }
     }
 }

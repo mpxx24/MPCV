@@ -21,13 +21,24 @@
         @Html.Raw(Model.Content)
     </div>
 </div>
+<div class="addCommentSection">
+    <div>
+        @Html.Label("lblVisitorName", "Name")
+        @Html.TextBox("tbVisitorName", string.Empty, new {@class = "form-control"})
+    </div>
+    <div>
+        @Html.Label("lblComment", "Comment:")
+        @Html.TextArea("taComment", string.Empty, new {@class = "form-control", @rows = 8, style = "resize: none; width: 100%;"})
+    </div>
+    <div>
+        <button id="btnAddComment" type="button" class="btn btn-primary" style="float: right">Add comment</button>
+    </div>
+</div>
 <h3>Comments:</h3>
 <div class="commentsPost">
     @{
-        if (@Model.Comments.Count > 0)
-        {
-            foreach (var comment in Model.Comments)
-            {
+        if (@Model.Comments.Count > 0) {
+            foreach (var comment in Model.Comments) {
                 <div class="postComment">
                     <div class="postCommentHeader">
                         <p class="postCommentAuthor">@comment.Author - @comment.Added.ToShortDateString()</p>
@@ -40,3 +51,18 @@
         }
     }
 </div>
+
+@* ReSharper disable once ConstructorCallNotUsed *@
+<script type="text/javascript">
+    $(document).ready(function () {
+        var config = {
+            PostId: "@Model.Id",
+            VisitorNameTextBoxId: "tbVisitorName",
+            CommentTextAreaId: "taComment",
+            AddCommentButton: "btnAddComment",
+            AddCommentAddress: "@Url.Action("AddComment", "Blog")"
+        }
+
+        new BlogPost(config);
+    });
+</script>

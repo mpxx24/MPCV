@@ -1,3 +1,4 @@
+"use strict";
 var Assistant = (function () {
     function Assistant(configuration) {
         this.configuration = configuration;
@@ -79,4 +80,3 @@ var Assistant = (function () {
     ;
     return Assistant;
 }());
-//# sourceMappingURL=Assistant.js.map

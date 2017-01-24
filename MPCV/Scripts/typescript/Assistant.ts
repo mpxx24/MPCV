@@ -1,10 +1,12 @@
-﻿interface IAssistantConfiguration {
+﻿import BaseView = require("./IBaseView");
+
+interface IAssistantConfiguration {
     TalkBubbleId: string;
     AssistantId: string;
     InfoLinkId: string;
 }
 
-class Assistant {
+class Assistant implements BaseView.IBaseView{
     configuration: IAssistantConfiguration;
     textBubbleDiv: any;
 
