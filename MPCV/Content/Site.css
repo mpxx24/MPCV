@@ -17,8 +17,7 @@ body {
 }
 
 input,
-select,
-textarea { max-width: 280px; }
+select { max-width: 280px; }
 
 html, body, .container-fluid, .row {
     background-color: white;
@@ -37,9 +36,13 @@ html, body, .container-fluid, .row {
 
 .h1 .h2 .h3 { }
 
-/**/
-/*Personal information site*/
-/**/
+.mpcv-button {
+    margin: 10px 0 10px 10px;
+}
+
+/*
+    Personal information site
+*/
 
 .personalInfoText {
     padding-left: 20px;
@@ -54,9 +57,9 @@ html, body, .container-fluid, .row {
     padding-bottom: 10px;
 }
 
-/**/
-/*Custom assistant*/
-/**/
+/*
+    Custom assistant
+*/
 
 @media (min-width: 992px) {
     #custom-assistant {

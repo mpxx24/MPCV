@@ -32,3 +32,4 @@ var BlogPost = (function () {
     };
     return BlogPost;
 }());
+//# sourceMappingURL=BlogPost.js.map

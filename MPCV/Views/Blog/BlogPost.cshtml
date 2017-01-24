@@ -28,13 +28,13 @@
     </div>
     <div>
         @Html.Label("lblComment", "Comment:")
-        @Html.TextArea("taComment", string.Empty, new {@class = "form-control", @rows = 8, style = "resize: none; width: 100%;"})
+        @Html.TextArea("taComment", string.Empty, new {@class = "form-control", @rows = 8, style = "resize: none;"})
     </div>
     <div>
-        <button id="btnAddComment" type="button" class="btn btn-primary" style="float: right">Add comment</button>
+        <button id="btnAddComment" type="button" class="btn btn-primary mpcv-button" style="float: right">Add comment</button>
     </div>
 </div>
-<h3>Comments:</h3>
+<h3 style="margin-top: 70px;">Comments:</h3>
 <div class="commentsPost">
     @{
         if (@Model.Comments.Count > 0) {

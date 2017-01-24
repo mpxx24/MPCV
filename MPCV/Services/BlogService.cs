@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity.Core;
 using System.Linq;
 using MPCV.DatabaseAccess.Blog;
+using MPCV.Models.JsonModels;
 using MPCV.Repository;
 using MPCV.Services.Interfaces;
 
@@ -15,12 +18,38 @@ namespace MPCV.Services {
             this.repository = repository;
         }
 
+        public void SaveComment(BlogComment comment) {
+            var post = this.GetPost(comment.Id);
+
+            if (post == null) {
+                throw new ObjectNotFoundException($"Post with specified ID ({comment.Id}) doesn't exist");
+            }
+
+            if (string.IsNullOrEmpty(comment.Name)) {
+                throw new ArgumentException($"Name can not be empty");
+            }
+
+            if (string.IsNullOrEmpty(comment.Comment)) {
+                throw new ArgumentException("Comment can not be empty");
+            }
+
+            post.Comments.Add(new Comment
+            {
+                Added = DateTime.Now,
+                Author = comment.Name,
+                Post = post,
+                Text = comment.Comment
+            });
+
+            this.repository.Edit(post);
+        }
+
         /// <summary>
         /// Gets all posts.
         /// </summary>
         /// <returns><see cref="List{T}"/></returns>
         public List<Post> GetAllPosts() {
-            return repository.GetAll<Post>().ToList();
+            return this.repository.GetAll<Post>().ToList();
         }
 
         /// <summary>
@@ -29,7 +58,7 @@ namespace MPCV.Services {
         /// <param name="id">The identifier.</param>
         /// <returns><see cref="Post"/></returns>
         public Post GetPost(int id) {
-            return repository.GetFirst<Post>(x => x.Id == id);
+            return this.repository.GetFirst<Post>(x => x.Id == id);
         }
 
         /// <summary>
@@ -38,12 +67,11 @@ namespace MPCV.Services {
         /// <param name="howMany">The how many.</param>
         /// <returns><see cref="List{T}"/></returns>
         public List<Post> GetXLatestPosts(int howMany) {
-            var allPosts = repository.GetAll<Post>().ToList();
+            var allPosts = this.repository.GetAll<Post>().ToList();
 
-            if (allPosts.Count >= howMany) {
-                return allPosts;
-            }
-            return allPosts.OrderByDescending(x => x.Added).Take(howMany).ToList();
+            return allPosts.Count >= howMany 
+                ? allPosts 
+                : allPosts.OrderByDescending(x => x.Added).Take(howMany).ToList();
         } 
     }
 }

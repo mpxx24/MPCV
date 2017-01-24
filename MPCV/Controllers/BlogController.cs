@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using MPCV.DatabaseAccess.Blog;
+using MPCV.Models.JsonModels;
 using MPCV.Services.Interfaces;
+using Newtonsoft.Json;
 
 namespace MPCV.Controllers {
     public class BlogController : Controller {
@@ -13,11 +15,13 @@ namespace MPCV.Controllers {
 
         public ActionResult BlogPost(int id) {
             var post = this.blogService.GetPost(id);
-            return View(post);      
+            return this.View(post);      
         }
 
-        public ActionResult AddComment(string p) {
-            return null;
+        public void AddComment(string p) {
+            var comment = JsonConvert.DeserializeObject<BlogComment>(p);
+
+            this.blogService.SaveComment(comment);
         }
     }
 }
