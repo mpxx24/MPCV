@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Core;
 using System.Linq;
+using Castle.Core.Logging;
 using MPCV.DatabaseAccess.Blog;
 using MPCV.Models.JsonModels;
 using MPCV.Repository;
@@ -13,9 +14,11 @@ namespace MPCV.Services {
     /// </summary>
     public class BlogService : IBlogService {
         private readonly IRepository repository;
+        private readonly ILogger log;
 
-        public BlogService(IRepository repository) {
+        public BlogService(IRepository repository, ILogger log) {
             this.repository = repository;
+            this.log = log;
         }
 
         public void SaveComment(BlogComment comment) {
@@ -42,6 +45,7 @@ namespace MPCV.Services {
             });
 
             this.repository.Edit(post);
+            this.log.InfoFormat($"Comment by {comment.Name} was added to post {post.Title}");
         }
 
         /// <summary>

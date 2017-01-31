@@ -1,5 +1,6 @@
 ﻿using System.Web.Http.Controllers;
 using System.Web.Mvc;
+using Castle.Facilities.Logging;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
@@ -19,6 +20,8 @@ namespace MPCV.Services.Installers {
                 Component.For<IUserService>().ImplementedBy<UserService>(),
                 Component.For<IBlogService>().ImplementedBy<BlogService>()
                 );
+
+            container.AddFacility<LoggingFacility>(x => x.LogUsing(LoggerImplementation.NLog).WithConfig("NLog.config"));
         }
     }
 }
