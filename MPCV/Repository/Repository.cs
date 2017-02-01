@@ -9,43 +9,43 @@ namespace MPCV.Repository {
         private readonly DbContext context;
 
         public Repository() {
-            context = new AppContext();
+            this.context = new AppContext();
         }
 
         public Repository(DbContext context) {
             this.context = context;
         }
         public void Dispose() {
-            context?.Dispose();
+            this.context?.Dispose();
         }
         public IQueryable<T> GetAll<T>() where T : class {
-            return context.Set<T>().AsQueryable();
+            return this.context.Set<T>().AsQueryable();
         }
         public IQueryable<T> Filter<T>(Expression<Func<T, bool>> func) where T : class {
-            return context.Set<T>().Where(func).AsQueryable();
+            return this.context.Set<T>().Where(func).AsQueryable();
         }
         public T GetFirst<T>(Expression<Func<T, bool>> func) where T : class {
-            return GetAll<T>().FirstOrDefault(func);
+            return this.GetAll<T>().FirstOrDefault(func);
         }
 
         public T Add<T>(T entity) where T : class {
-            var obj = context.Set<T>().Add(entity);
-            context.SaveChanges();
+            var obj = this.context.Set<T>().Add(entity);
+            this.context.SaveChanges();
             return obj;
         }
         public int Edit<T>(T entity) where T : class {
             try {
-                var obj = context.Entry(entity);
-                context.Set<T>().Attach(entity);
+                var obj = this.context.Entry(entity);
+                this.context.Set<T>().Attach(entity);
                 obj.State = EntityState.Modified;
-                return context.SaveChanges();
+                return this.context.SaveChanges();
             }
             catch (Exception) {
                 throw;
             }
         }
         public void Save() {
-            context.SaveChanges();
+            this.context.SaveChanges();
         }
     }
 }

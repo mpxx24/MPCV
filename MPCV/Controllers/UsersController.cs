@@ -13,7 +13,7 @@ namespace MPCV.Controllers {
 
         // GET api/users
         public IEnumerable<UserApiModel> Get() {
-            return userService.GetWebApiUserResults();
+            return this.userService.GetWebApiUserResults();
         }
     }
 }

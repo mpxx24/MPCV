@@ -16,12 +16,12 @@ namespace MPCV.Services {
 
         public IEnumerable<UserApiModel> GetWebApiUserResults() {
             //do not use repository.GetFirst() here - this way I don't have to specify user id in code
-            var users = repository.GetAll<User>();
+            var users = this.repository.GetAll<User>();
 
             return UserModelConverter.ConvertUserToApiModel(users.First());
         }
         public User GetFirstUser() {
-            var users = repository.GetAll<User>();
+            var users = this.repository.GetAll<User>();
 
             return users.First();
         }

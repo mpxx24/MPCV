@@ -12,11 +12,11 @@ namespace MPCV.Controllers {
         }
 
         public IEnumerable<Post> Get() {
-            return blogService.GetAllPosts();
+            return this.blogService.GetAllPosts();
         }
 
         public Post Get(int id) {
-            return blogService.GetPost(id);
+            return this.blogService.GetPost(id);
         }
     }
 }
