@@ -1,17 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
 
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Content/Navbars.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Content/Controls.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Content/Blog.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Content/carousel/owl.carousel.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Content/carousel/owl.theme.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Navbars.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Controls.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Blog.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Modal.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/carousel/owl.theme.css" rel="stylesheet" type="text/css" />
 
     <script src="~/Scripts/bootstrap/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/my scripts/MPCV.js"></script>
@@ -29,52 +30,52 @@
     <script src="~/Scripts/typescript/IBaseView.js"></script>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2 sidebar">
-            <div id="main-layout-circle-image" class="circular-image"></div>
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <span class="visible-xs navbar-brand">MPCV</span>
-            </div>
-            <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                <div class="menu">
-                    <ul id="side-panel-ul" class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home", new {area = ""}, new {})</li>
-                        <li>@Html.ActionLink("Blog", "Blog", "Home", new {area = ""}, new {})</li>
-                        <li>@Html.ActionLink("Project examples", "ProjectExamples", "Home", new {area = ""}, new {})</li>
-                        <li><a href="https://github.com/mpxx24">Github repository</a></li>
-                        <li>@Html.ActionLink("Contact me", "Contact", "Home", new {area = ""}, new {})</li>
-                    </ul>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <div id="main-layout-circle-image" class="circular-image"></div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="visible-xs navbar-brand">MPCV</span>
                 </div>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/mpxx24"><img src="..\..\Content/icons/facebook.png" alt="facebook"/></a>
-                    <a href="https://github.com/mpxx24"> <img src="..\..\Content/icons/github.png" alt="github"/></a>
-                    <a href="https://www.linkedin.com/in/mariusz-pi%C4%85tkowski-9783554b"> <img src="..\..\Content/icons/linkedin.png" alt="linkedin"/></a>
-                    <a href="https://twitter.com/mpxx24"> <img src="..\..\Content/icons/twitter.png" alt="twitter"/></a>
-                </div>
-                <div class="signature">
-                    <p>&copy; @DateTime.Now.Year - Mariusz Piątkowski</p>
+                <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                    <div class="menu">
+                        <ul id="side-panel-ul" class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { })</li>
+                            <li>@Html.ActionLink("Blog", "Blog", "Home", new { area = "" }, new { })</li>
+                            <li>@Html.ActionLink("Project examples", "ProjectExamples", "Home", new { area = "" }, new { })</li>
+                            <li><a href="https://github.com/mpxx24">Github repository</a></li>
+                            <li>@Html.ActionLink("Contact me", "Contact", "Home", new { area = "" }, new { })</li>
+                        </ul>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/mpxx24"><img src="..\..\Content/icons/facebook.png" alt="facebook" /></a>
+                        <a href="https://github.com/mpxx24"> <img src="..\..\Content/icons/github.png" alt="github" /></a>
+                        <a href="https://www.linkedin.com/in/mariusz-pi%C4%85tkowski-9783554b"> <img src="..\..\Content/icons/linkedin.png" alt="linkedin" /></a>
+                        <a href="https://twitter.com/mpxx24"> <img src="..\..\Content/icons/twitter.png" alt="twitter" /></a>
+                    </div>
+                    <div class="signature">
+                        <p>&copy; @DateTime.Now.Year - Mariusz Piątkowski</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 col-md-offset-2 body-content">
-            @RenderBody()
-        </div>
-        <div id="custom-assistant" style="display: none">
-            <div id="talk-bubble" class="custom-assistant-speechCloud">
-                <p></p>
+            <div class="col-md-6 col-md-offset-2 body-content">
+                @RenderBody()
             </div>
-            <img class="custom-assistant-img" src="../../Content/assistant/assistant.png" alt="assistant.png"/>
-            <a id="custom-assistant-infoLink" href="#assistanInformationsModal" data-toggle="modal">info</a>
+            <div id="custom-assistant" style="display: block">
+                <div id="talk-bubble" class="custom-assistant-speechCloud">
+                    <p></p>
+                </div>
+                <img class="custom-assistant-img" src="../../Content/assistant/assistant.png" alt="assistant.png" />
+                <a id="custom-assistant-infoLink" href="#assistanInformationsModal" data-toggle="modal">info</a>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>
 
@@ -88,7 +89,9 @@
                 <h4 class="modal-title">Informations about custom assistant</h4>
             </div>
             <div class="modal-body">
-                <p></p>
+                <div id="custom-assistant-info">
+                    <p></p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -103,7 +106,9 @@
         var config = {
             TalkBubbleId: "talk-bubble",
             AssistantId: "custom-assistant",
-            InfoLinkId: "custom-assistant-infoLink"
+            InfoLinkId: "custom-assistant-infoLink",
+            AssistantModalContentDivId: "custom-assistant-info",
+            AssistantModalContentData: "@Url.Action("GetAssistantInfo", "Assistant")"
         }
 
         new Assistant(config);

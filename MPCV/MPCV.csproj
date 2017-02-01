@@ -202,6 +202,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AssistantController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
@@ -211,6 +212,7 @@
     </Compile>
     <Compile Include="Models\ApiModels\ProgrammingSkillApiModel.cs" />
     <Compile Include="Models\ApiModels\UserApiModel.cs" />
+    <Compile Include="Models\Assistant\AssistantTempLocalization.cs" />
     <Compile Include="Models\Converters\UserModelConverter.cs" />
     <Compile Include="Models\JsonModels\BlogComment.cs" />
     <Compile Include="Models\JsonModels\ProgrammingSkillForChart.cs" />
@@ -245,6 +247,7 @@
     <Content Include="Content\icons\instagram.png" />
     <Content Include="Content\icons\linkedin.png" />
     <Content Include="Content\icons\twitter.png" />
+    <Content Include="Content\Modal.css" />
     <Content Include="Content\Navbars.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />

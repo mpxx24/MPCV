@@ -3,6 +3,7 @@ var Assistant = (function () {
     function Assistant(configuration) {
         this.configuration = configuration;
         this.initializeView();
+        this.initilaizeControls();
         this.initializeAssistant();
         this.initializeAssistantsActions();
     }
@@ -61,7 +62,6 @@ var Assistant = (function () {
     Assistant.prototype.onYesHelpButtonClicked = function () {
         this.setTextBubbleText("");
         var ulWithOptions = HtmlControlsHelper.HtmlUl(2, ["option1", "option2"]);
-        console.log(ulWithOptions);
         this.textBubbleDiv.append(ulWithOptions);
     };
     ;
@@ -76,6 +76,22 @@ var Assistant = (function () {
     Assistant.prototype.showAssistantInfoLink = function () {
         //$(`#${this.configuration.InfoLinkId}`).click(this.infoLinkClicked.bind(this));
         $("#" + this.configuration.InfoLinkId).show();
+    };
+    ;
+    Assistant.prototype.initilaizeControls = function () {
+        $("#" + this.configuration.InfoLinkId).click(this.onAssistantInfoLinkClicked.bind(this));
+    };
+    Assistant.prototype.onAssistantInfoLinkClicked = function () {
+        var _this = this;
+        console.log("CLICKS");
+        $.ajax({
+            url: this.configuration.AssistantModalContentData,
+            type: "GET",
+            dataType: "text",
+            success: function (result) {
+                $("#" + _this.configuration.AssistantModalContentDivId + " > p").text(result);
+            }
+        });
     };
     ;
     return Assistant;

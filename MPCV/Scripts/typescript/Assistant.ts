@@ -4,6 +4,8 @@ interface IAssistantConfiguration {
     TalkBubbleId: string;
     AssistantId: string;
     InfoLinkId: string;
+    AssistantModalContentDivId: string,
+    AssistantModalContentData: string;
 }
 
 class Assistant implements BaseView.IBaseView{
@@ -13,6 +15,7 @@ class Assistant implements BaseView.IBaseView{
     constructor(configuration: IAssistantConfiguration) {
         this.configuration = configuration;
         this.initializeView();
+        this.initilaizeControls();
         this.initializeAssistant();
         this.initializeAssistantsActions();
     }
@@ -71,7 +74,6 @@ class Assistant implements BaseView.IBaseView{
     onYesHelpButtonClicked(): void {
         this.setTextBubbleText("");
         var ulWithOptions = HtmlControlsHelper.HtmlUl(2, ["option1", "option2"]);
-        console.log(ulWithOptions);
         this.textBubbleDiv.append(ulWithOptions);
     };
 
@@ -88,5 +90,21 @@ class Assistant implements BaseView.IBaseView{
         $(`#${this.configuration.InfoLinkId}`).show();
     };
 
-    //infoLinkClicked(): void {};
+    initilaizeControls(): void {
+        $(`#${this.configuration.InfoLinkId}`).click(this.onAssistantInfoLinkClicked.bind(this));
+    }
+
+    onAssistantInfoLinkClicked(): void {
+        console.log("CLICKS");
+        $.ajax({
+            url: this.configuration.AssistantModalContentData,
+            type: "GET",
+            dataType: "text",
+            success: result => {
+                $(`#${this.configuration.AssistantModalContentDivId} > p`).text(result);
+            }
+        });
+
+        
+    };
 }
