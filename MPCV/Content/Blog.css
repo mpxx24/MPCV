@@ -40,6 +40,10 @@
     position: relative;
 }
 
+.postCommentNone {
+    text-align: center;
+}
+
 .postCommentHeader {
     float: left;
 }
@@ -80,13 +84,14 @@
 
 .addCommentSection {
     width: 100%;
-    margin-top: 75px;
-    border-top: 1px solid #909090;
+    margin-top: 35px;
+    border-top: 1px solid #c0c0c0;
 }
 
 .addCommentSection label {
     display: block;
     margin-bottom: 5px;
+    margin-top: 5px;
     width: 100%;
 }
 
