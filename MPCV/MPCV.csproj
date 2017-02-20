@@ -220,7 +220,11 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Services\BlogService.cs" />
-    <Compile Include="Services\Installers\WindsorInstaller.cs" />
+    <Compile Include="Services\Installers\ControllersInstaller.cs" />
+    <Compile Include="Services\Installers\FacilitiesInstaller.cs" />
+    <Compile Include="Services\Installers\ServicesInstaller.cs" />
+    <Compile Include="Services\Installers\RepositoryInstaller.cs" />
+    <Compile Include="Services\Interfaces\IBaseService.cs" />
     <Compile Include="Services\Interfaces\IBlogService.cs" />
     <Compile Include="Services\Interfaces\IUserService.cs" />
     <Compile Include="Services\UserService.cs" />
