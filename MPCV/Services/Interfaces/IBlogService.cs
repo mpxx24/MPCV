@@ -3,7 +3,7 @@ using MPCV.DatabaseAccess.Blog;
 using MPCV.Models.JsonModels;
 
 namespace MPCV.Services.Interfaces {
-    public interface IBlogService {
+    public interface IBlogService : IBaseService {
         /// <summary>
         ///     Gets the post with specified id.
         /// </summary>
