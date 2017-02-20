@@ -16,6 +16,13 @@ namespace MPCV.Tests {
         }
 
         [Test]
+        public void AllServices_Naming_EndsWith_Service() {
+            var services = TestHelper.GetImplementationTypes(typeof (object), this.container);
+
+            Assert.That(services.All(x => x.Name.EndsWith("Service")));
+        }
+
+        [Test]
         public void AllServices_Registered_Implement_IBaseService() {
             var registeredServices = TestHelper.GetImplementationTypes(typeof (object), this.container);
 
@@ -28,13 +35,6 @@ namespace MPCV.Tests {
             var registeredServices = TestHelper.GetImplementationTypes(typeof (IBaseService), this.container);
 
             Assert.AreEqual(services, registeredServices);
-        }
-
-        [Test]
-        public void AllServices_Naming_EndsWith_Service() {
-            var services = TestHelper.GetImplementationTypes(typeof (object), this.container);
-
-            Assert.That(services.All(x => x.Name.EndsWith("Service")));
         }
     }
 }
