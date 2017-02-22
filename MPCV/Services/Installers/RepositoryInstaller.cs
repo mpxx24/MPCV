@@ -6,7 +6,9 @@ using MPCV.Repository;
 namespace MPCV.Services.Installers {
     public class RepositoryInstaller : IWindsorInstaller {
         public void Install(IWindsorContainer container, IConfigurationStore store) {
-            Component.For<IRepository>().ImplementedBy<Repository.Repository>();
+            container.Register(
+                Component.For<IRepository>().ImplementedBy<Repository.Repository>()
+            );
         }
     }
 }
