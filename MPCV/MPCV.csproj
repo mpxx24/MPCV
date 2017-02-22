@@ -214,6 +214,7 @@
     <Compile Include="Models\ApiModels\UserApiModel.cs" />
     <Compile Include="Models\Assistant\AssistantTempLocalization.cs" />
     <Compile Include="Models\Converters\UserModelConverter.cs" />
+    <Compile Include="Models\JsonModels\AddPostModel.cs" />
     <Compile Include="Models\JsonModels\BlogComment.cs" />
     <Compile Include="Models\JsonModels\ProgrammingSkillForChart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,6 +342,7 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Blog\AddPost.cshtml" />
     <None Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Blog\BlogPost.cshtml" />
   </ItemGroup>
@@ -364,6 +366,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typescript\AddPost.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Assistant.ts" />
     <TypeScriptCompile Include="Scripts\typescript\BlogPost.ts" />
     <TypeScriptCompile Include="Scripts\typescript\HtmlControlsHelper.ts" />

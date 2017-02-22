@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "AddPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddPost</h2>
+
+<div>
+    <div>
+        <label>Post title</label>
+        <input id="tbAddPost_Title" class="form-control"/>
+    </div>
+    <div>
+        <label>Short description</label>
+        <textarea id="taAddPost_ShortDescription" class="form-control" rows="4"></textarea>
+    </div>
+    <div>
+        <label>Post text</label>
+        <textarea id="taAddPost_Text" class="form-control" rows="30"></textarea>
+    </div>
+    <div>
+        <button id="btnAddPost_AddPost" class="btn btn-info">Add post</button>
+    </div>
+</div>
+
+
+@* ReSharper disable ConstructorCallNotUsed *@
+<script type="text/javascript">
+    $(document).ready(function () {
+        var config = {
+            TitleTextBoxId: "tbAddPost_Title",
+            ShortDescriptionTextAreaId: "taAddPost_ShortDescription",
+            TextTextAreaId: "taAddPost_Text",
+            AddPostButtonId: "btnAddPost_AddPost",
+            AddPostActionAddress: '@Url.Action("SavePost", "Blog")'
+        }
+
+        new AddPost(config);
+    });
+</script>
+@* ReSharper restore ConstructorCallNotUsed *@

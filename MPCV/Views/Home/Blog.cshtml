@@ -6,6 +6,10 @@
 
 <h2>Blog</h2>
 
+<div class="addPostDiv">
+    <button id="addNewPostButton" type="button" class="btn btn-default" onclick="location.href ='@Url.Action("AddPost", "Blog")'">Add new blog post</button>
+</div>
+
 @foreach (var post in Model) {
     <div class="blogPost">
         <div class="panel panel-default clearfix">

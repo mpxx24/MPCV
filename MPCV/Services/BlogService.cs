@@ -29,11 +29,11 @@ namespace MPCV.Services {
             }
 
             if (string.IsNullOrEmpty(comment.Name)) {
-                throw new ArgumentException($"Name can not be empty");
+                throw new ArgumentNullException($"{nameof(comment.Name)} can not be empty");
             }
 
             if (string.IsNullOrEmpty(comment.Comment)) {
-                throw new ArgumentException("Comment can not be empty");
+                throw new ArgumentNullException($"{nameof(comment.Comment)} can not be empty");
             }
 
             post.Comments.Add(new Comment
@@ -76,6 +76,28 @@ namespace MPCV.Services {
             return allPosts.Count >= howMany 
                 ? allPosts 
                 : allPosts.OrderByDescending(x => x.Added).Take(howMany).ToList();
-        } 
+        }
+
+        /// <summary>
+        /// Adds the post.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public void AddPost(AddPostModel data) {
+            if (string.IsNullOrEmpty(data.Title)) {
+                throw new ArgumentNullException($"{nameof(data.Title)} can not be empty");
+            }
+
+            if (string.IsNullOrEmpty(data.Description)) {
+                throw new ArgumentNullException($"{nameof(data.Description)} can not be null");
+            }
+
+            if (string.IsNullOrEmpty(data.Text)) {
+                throw new ArgumentNullException($"{nameof(data.Text)} can not be empty");
+            }
+
+            this.repository.Add(new Post {Title = data.Title, ShortDescription = data.Description, Content = data.Text, Added = DateTime.Now, Author = "Mariusz Piątkowski", Comments = new List<Comment>()});
+            this.log.InfoFormat($"New post '{data.Title}' was added!");
+        }
     }
 }

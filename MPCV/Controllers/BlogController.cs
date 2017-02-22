@@ -23,5 +23,15 @@ namespace MPCV.Controllers {
 
             this.blogService.SaveComment(comment);
         }
+
+        public ActionResult AddPost() {
+            return this.View();
+        }
+
+        public void SavePost(string p) {
+            var data = JsonConvert.DeserializeObject<AddPostModel>(p);
+
+            this.blogService.AddPost(data);
+        }
     }
 }

@@ -36,5 +36,10 @@ namespace MPCV.Services.Interfaces {
         /// </returns>
         List<Post> GetXLatestPosts(int howMany);
 
+        /// <summary>
+        /// Adds the post.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        void AddPost(AddPostModel data);
     }
 }
