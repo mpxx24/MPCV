@@ -5,7 +5,7 @@ using MPCV.Services.Installers;
 using MPCV.Services.Interfaces;
 using NUnit.Framework;
 
-namespace MPCV.Tests {
+namespace MPCV.Tests.Installers {
     [TestFixture]
     public class ServicesInstallerTests {
         private IWindsorContainer container;
