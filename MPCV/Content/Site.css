@@ -36,8 +36,21 @@ html, body, .container-fluid, .row {
 
 .h1 .h2 .h3 { }
 
-.mpcv-button {
+/*
+   mpcv standard styles
+*/
+
+.mpcv-button-right {
+    float: right;
     margin: 10px 0 10px 10px;
+}
+
+.mpcv-labelInput-div {
+    margin-top: 15px;
+}
+
+.mpcv-textArea {
+    resize: none;
 }
 
 /*

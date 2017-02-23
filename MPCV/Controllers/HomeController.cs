@@ -29,14 +29,6 @@ namespace MPCV.Controllers {
             return this.View();
         }
 
-        public ActionResult GithubRepository() {
-            return this.View();
-        }
-
-        public ActionResult DownloadCv() {
-            return this.View();
-        }
-
         public ActionResult Contact() {
             return this.View();
         }

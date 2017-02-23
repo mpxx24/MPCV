@@ -28,6 +28,7 @@ namespace MPCV.Controllers {
             return this.View();
         }
 
+        [ValidateInput(false)]
         public void SavePost(string p) {
             var data = JsonConvert.DeserializeObject<AddPostModel>(p);
 

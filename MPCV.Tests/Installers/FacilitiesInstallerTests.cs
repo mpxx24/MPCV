@@ -9,14 +9,14 @@ namespace MPCV.Tests.Installers {
 
         [SetUp]
         public void SetUp() {
-            container = new WindsorContainer().Install(new FacilitiesInstaller());
+            this.container = new WindsorContainer().Install(new FacilitiesInstaller());
         }
 
         [Ignore("Need to resolve problem with type conversion exception")]
         [Test]
         public void AllFacilities_Registered_True() {
-            //TODO: exception is thrown (type converstion?)
-            var facilities = container.Kernel.GetFacilities();
+            //TODO: exception is thrown (type conversion?)
+            var facilities = this.container.Kernel.GetFacilities();
             Assert.That(facilities.Length, Is.EqualTo(1));
         }
     }
