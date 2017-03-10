@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Reflection;
 using Castle.Core.Internal;
 using Castle.Windsor;
 using MPCV.Services.Installers;
@@ -25,7 +26,7 @@ namespace MPCV.Tests.Installers {
         [Test]
         public void AllServices_Naming_MethodNamesStartWithCapitalLetter() {
             var allServices = TestHelper.GetAllPublicClassesOfThisTypeFromAssembly(typeof(IBaseService), x => x.Is<IBaseService>());
-            var allMethodsFromServices = allServices.SelectMany(x => x.GetMethods()).Where(x => x.Module.ScopeName != "CommonLanguageRuntimeLibrary");
+            var allMethodsFromServices = allServices.SelectMany(x => x.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance));
 
             foreach (var method in allMethodsFromServices) {
                 Assert.That(char.IsUpper(method.Name[0]));
