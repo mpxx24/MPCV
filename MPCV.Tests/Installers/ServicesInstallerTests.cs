@@ -23,6 +23,16 @@ namespace MPCV.Tests.Installers {
         }
 
         [Test]
+        public void AllServices_Naming_MethodNamesStartWithCapitalLetter() {
+            var allServices = TestHelper.GetAllPublicClassesOfThisTypeFromAssembly(typeof(IBaseService), x => x.Is<IBaseService>());
+            var allMethodsFromServices = allServices.SelectMany(x => x.GetMethods()).Where(x => x.Module.ScopeName != "CommonLanguageRuntimeLibrary");
+
+            foreach (var method in allMethodsFromServices) {
+                Assert.That(char.IsUpper(method.Name[0]));
+            }
+        }
+
+        [Test]
         public void AllServices_Registered_Implement_IBaseService() {
             var registeredServices = TestHelper.GetImplementationTypes(typeof (object), this.container);
 
